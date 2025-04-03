@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "pearlanium-mod",
+	"version": "${version}",
+	"name": "Pearlanium Mod",
+	"description": "This mod adds some extra armor progression for people who need better armor than netherite without breaking the vanilla appeal.",
+	"authors": [
+		"teramanbr"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/pearlanium-mod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.teramanbr.pearlanium.PearlaniumMod"
+		],
+		"client": [
+			"com.teramanbr.pearlanium.PearlaniumModClient"
+		],
+		"fabric-datagen": [
+			"com.teramanbr.pearlanium.PearlaniumModDataGenerator"
+		]
+	},
+	"mixins": [
+		"pearlanium-mod.mixins.json",
+		{
+			"config": "pearlanium-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
