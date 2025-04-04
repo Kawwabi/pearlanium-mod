@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.teramanbr.pearlanium.init.modblocks;
+import com.teramanbr.pearlanium.init.moditemgroup;
 import com.teramanbr.pearlanium.init.moditems;
 
 public class PearlaniumMod implements ModInitializer {
@@ -25,6 +26,7 @@ public class PearlaniumMod implements ModInitializer {
 
 		moditems.load();
 		modblocks.load();
+		moditemgroup.load();
 		LOGGER.info("Mod loaded!");
 	}
 

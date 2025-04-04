@@ -1,4 +1,5 @@
 {
     "item.pearlanium-mod.brute_pearlanium": "Brute Pearlanium",
-    "block.pearlanium-mod.pearled_ore": "Pearled Ore"
+    "block.pearlanium-mod.pearled_ore": "Pearled Ore",
+    "itemGroup.pearlanium-mod.pearlanium_group": "Pearlanium Mod"
 }
