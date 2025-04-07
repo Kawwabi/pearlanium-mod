@@ -1,6 +1,9 @@
 package com.teramanbr.pearlanium;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
@@ -24,9 +27,29 @@ public class PearlaniumMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+		// load init classes
 		moditems.load();
 		modblocks.load();
 		moditemgroup.load();
+
+		// event handling
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+			entries.addAfter(Items.ANCIENT_DEBRIS, modblocks.PEARLED_ORE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.addAfter(Items.ANCIENT_DEBRIS, modblocks.PEARLED_ORE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.addAfter(Items.NETHERITE_SCRAP, moditems.BRUTE_PEARLANIUM);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.addAfter(Items.NETHERITE_INGOT, moditems.PEARLANIUM_INGOT);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE);
+		});
+
+		//test message
 		LOGGER.info("Mod loaded!");
 	}
 
