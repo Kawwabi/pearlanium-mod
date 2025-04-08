@@ -1,0 +1,6 @@
+{
+    "parent": "pearlanium_mod:block/pearlanium_block",
+    "textures": {
+        "layer0": "pearlanium_mod:block/pearlanium_block"
+    }
+}

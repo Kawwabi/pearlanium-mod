@@ -1,0 +1,6 @@
+{
+    "parent": "pearlanium_mod:block/pearled_ore",
+    "textures": {
+        "layer0": "pearlanium_mod:block/pearled_ore"
+    }
+}

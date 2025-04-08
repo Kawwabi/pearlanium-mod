@@ -14,7 +14,7 @@ import com.teramanbr.pearlanium.init.moditemgroup;
 import com.teramanbr.pearlanium.init.moditems;
 
 public class PearlaniumMod implements ModInitializer {
-	public static final String MOD_ID = "pearlanium-mod";
+	public static final String MOD_ID = "pearlanium_mod";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -47,6 +47,9 @@ public class PearlaniumMod implements ModInitializer {
 		});
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
 			entries.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+			entries.addAfter(Items.NETHERITE_BLOCK, modblocks.PEARLANIUM_BLOCK);
 		});
 
 		//test message

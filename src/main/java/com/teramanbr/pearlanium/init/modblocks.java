@@ -14,6 +14,11 @@ public class modblocks {
         .strength(15.0F, 50.0F)
         .requiresTool()), new Item.Settings().fireproof());
 
+        public static final Block PEARLANIUM_BLOCK = registerWithItem("pearlanium_block", 
+        new Block(AbstractBlock.Settings.create()
+        .strength(15.0F, 50.0F)
+        .requiresTool()), new Item.Settings().fireproof());
+
     public static <T extends Block> T register(String name, T block) {
         return Registry.register(Registries.BLOCK, PearlaniumMod.id(name), block);
     }

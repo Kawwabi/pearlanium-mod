@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "pearlanium-mod:item/pearlanium_ingot"
+        "layer0": "pearlanium_mod:item/brute_pearlanium"
     }
 }
