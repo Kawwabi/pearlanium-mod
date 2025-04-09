@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:block/cube_all",
-    "textures": {
-        "all": "pearlanium_mod:block/pearled_ore"
-    }
-}

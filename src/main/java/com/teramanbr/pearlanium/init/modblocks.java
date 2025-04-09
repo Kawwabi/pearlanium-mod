@@ -11,12 +11,12 @@ import net.minecraft.registry.Registry;
 public class modblocks {
     public static final Block PEARLED_ORE = registerWithItem("pearled_ore", 
         new Block(AbstractBlock.Settings.create()
-        .strength(15.0F, 50.0F)
+        .strength(30.0F, 50.0F)
         .requiresTool()), new Item.Settings().fireproof());
 
         public static final Block PEARLANIUM_BLOCK = registerWithItem("pearlanium_block", 
         new Block(AbstractBlock.Settings.create()
-        .strength(15.0F, 50.0F)
+        .strength(40.0F, 50.0F)
         .requiresTool()), new Item.Settings().fireproof());
 
     public static <T extends Block> T register(String name, T block) {
