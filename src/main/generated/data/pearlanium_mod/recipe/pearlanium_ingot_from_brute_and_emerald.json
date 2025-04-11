@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "pearlanium_mod:brute_pearlanium"
+    },
+    {
+      "item": "pearlanium_mod:brute_pearlanium"
+    },
+    {
+      "item": "pearlanium_mod:brute_pearlanium"
+    },
+    {
+      "item": "pearlanium_mod:brute_pearlanium"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "minecraft:emerald"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "pearlanium_mod:pearlanium_ingot"
+  }
+}

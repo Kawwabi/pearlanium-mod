@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "blasting_only_pearlanium",
+  "ingredient": {
+    "item": "pearlanium_mod:pearled_ore"
+  },
+  "result": {
+    "id": "pearlanium_mod:brute_pearlanium"
+  }
+}

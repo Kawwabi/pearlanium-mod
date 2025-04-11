@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "pearlanium_mod:pearlanium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "pearlanium_mod:pearlanium_ingot"
+  }
+}

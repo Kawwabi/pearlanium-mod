@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import com.teramanbr.pearlanium.init.modblocks;
 import com.teramanbr.pearlanium.init.moditemgroup;
 import com.teramanbr.pearlanium.init.moditems;
+import com.teramanbr.pearlanium.init.worldgen.BiomeModificationInit;
 
 public class PearlaniumMod implements ModInitializer {
 	public static final String MOD_ID = "pearlanium_mod";
@@ -31,6 +32,7 @@ public class PearlaniumMod implements ModInitializer {
 		moditems.load();
 		modblocks.load();
 		moditemgroup.load();
+		BiomeModificationInit.load();
 
 		// event handling
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {

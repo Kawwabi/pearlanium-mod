@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brute_pearlanium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pearlanium_mod:brute_pearlanium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_emerald": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:emerald"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pearlanium_ingot_from_brute_and_emerald"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brute_pearlanium",
+      "has_emerald"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pearlanium_ingot_from_brute_and_emerald"
+    ]
+  }
+}
