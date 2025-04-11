@@ -1,6 +1,11 @@
 {
     "item.pearlanium_mod.brute_pearlanium": "Brute Pearlanium",
     "item.pearlanium_mod.pearlanium_ingot": "Pearlanium Ingot",
+    "item.pearlanium_mod.pearlanium_sword": "Pearlanium Sword",
+    "item.pearlanium_mod.pearlanium_axe": "Pearlanium Axe",
+    "item.pearlanium_mod.pearlanium_pickaxe": "Pearlanium Pickaxe",
+    "item.pearlanium_mod.pearlanium_shovel": "Pearlanium Shovel",
+    "item.pearlanium_mod.pearlanium_hoe": "Pearlanium Hoe",
     "item.pearlanium_mod.pearlanium_upgrade_smithing_template": "Pearlanium Upgrade Smithing Template",
     "block.pearlanium_mod.pearled_ore": "Pearled Ore",
     "block.pearlanium_mod.pearlanium_block": "Pearlanium Block",

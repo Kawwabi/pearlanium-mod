@@ -26,5 +26,10 @@ public class PearlaniumModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(moditems.BRUTE_PEARLANIUM, Models.GENERATED);
         itemModelGenerator.register(moditems.PEARLANIUM_INGOT, Models.GENERATED);
         itemModelGenerator.register(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(moditems.PEARLANIUM_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(moditems.PEARLANIUM_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(moditems.PEARLANIUM_AXE, Models.HANDHELD);
+        itemModelGenerator.register(moditems.PEARLANIUM_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(moditems.PEARLANIUM_HOE, Models.HANDHELD);
     }
 }

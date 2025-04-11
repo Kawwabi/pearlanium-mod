@@ -3,6 +3,7 @@ package com.teramanbr.pearlanium.data.provider;
 import java.util.concurrent.CompletableFuture;
 
 import com.teramanbr.pearlanium.init.modblocks;
+import com.teramanbr.pearlanium.list.TagList;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider.BlockTagProvider;
@@ -26,6 +27,8 @@ public class PearlaniumModBlockTagProvider extends BlockTagProvider {
                     .add(modblocks.PEARLANIUM_BLOCK);
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                     .add(modblocks.PEARLANIUM_BLOCK);
+        
+        getOrCreateTagBuilder(TagList.Blocks.INCORRECT_FOR_PEARLANIUM_TOOL);
     }
 
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "pearlanium_mod:item/pearlanium_sword"
+  }
+}
