@@ -53,6 +53,22 @@ public class PearlaniumMod implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
 			entries.addAfter(Items.NETHERITE_BLOCK, modblocks.PEARLANIUM_BLOCK);
 		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(Items.NETHERITE_SWORD, moditems.PEARLANIUM_SWORD);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(Items.NETHERITE_HOE, moditems.PEARLANIUM_SHOVEL);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_SHOVEL, moditems.PEARLANIUM_PICKAXE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_PICKAXE, moditems.PEARLANIUM_AXE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_AXE, moditems.PEARLANIUM_HOE);
+		});
+		
 
 		//test message
 		LOGGER.info("Mod loaded!");

@@ -1,6 +1,6 @@
-// 1.21.1	2025-04-11T11:38:31.2398725	Pearlanium Mod/Tags for minecraft:item
-6f77a42dbc33235fa61b604d41b06a4eb16ac54c data\minecraft\tags\item\swords.json
-23c0a9c2b359157dc5e9f68238021d571c6be653 data\minecraft\tags\item\pickaxes.json
-f6a95a238a558d5825d1e8a1c22d74b157402e31 data\minecraft\tags\item\shovels.json
-02a6bf2931ba34831cd4c3b18f7d69d87123f933 data\minecraft\tags\item\hoes.json
-237d97f51776a25d2e8bd77a62c4f9bbef8688b2 data\minecraft\tags\item\axes.json
+// 1.21.1	2025-04-11T22:22:30.148634852	Pearlanium Mod/Tags for minecraft:item
+6f77a42dbc33235fa61b604d41b06a4eb16ac54c data/minecraft/tags/item/swords.json
+02a6bf2931ba34831cd4c3b18f7d69d87123f933 data/minecraft/tags/item/hoes.json
+237d97f51776a25d2e8bd77a62c4f9bbef8688b2 data/minecraft/tags/item/axes.json
+23c0a9c2b359157dc5e9f68238021d571c6be653 data/minecraft/tags/item/pickaxes.json
+f6a95a238a558d5825d1e8a1c22d74b157402e31 data/minecraft/tags/item/shovels.json

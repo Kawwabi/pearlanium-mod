@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "pearlanium_mod:pearlanium_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_hoe"
+  },
+  "result": {
+    "count": 1,
+    "id": "pearlanium_mod:pearlanium_hoe"
+  },
+  "template": {
+    "item": "pearlanium_mod:pearlanium_upgrade_smithing_template"
+  }
+}

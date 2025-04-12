@@ -1,5 +1,10 @@
 {
     "item.pearlanium_mod.brute_pearlanium": "Perolânio Bruto",
+    "item.pearlanium_mod.pearlanium_sword": "Espada de Perolânio",
+    "item.pearlanium_mod.pearlanium_axe": "Machado de Perolânio",
+    "item.pearlanium_mod.pearlanium_pickaxe": "Picareta de Perolânio",
+    "item.pearlanium_mod.pearlanium_shovel": "Pá de Perolânio",
+    "item.pearlanium_mod.pearlanium_hoe": "Enxada de Perolânio",
     "item.pearlanium_mod.pearlanium_ingot": "Barra de Perolânio",
     "item.pearlanium_mod.pearlanium_upgrade_smithing_template": "Molde de Ferraria de Melhoria de Perolânio",
     "block.pearlanium_mod.pearled_ore": "Minério Perolado",
