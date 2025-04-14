@@ -4,6 +4,7 @@ package com.teramanbr.pearlanium.init;
 import com.teramanbr.pearlanium.PearlaniumMod;
 import com.teramanbr.pearlanium.list.enums.PearlaniumModToolMaterials;
 
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -38,8 +39,21 @@ public class moditems {
     new HoeItem(PearlaniumModToolMaterials.PEARLANIUM, new Item.Settings()
     .attributeModifiers(HoeItem.createAttributeModifiers(PearlaniumModToolMaterials.PEARLANIUM, 0, -3.0F))));
 
+    public static final ArmorItem PEARLANIUM_HELMET = register("pearlanium_helmet",
+    new ArmorItem(ModArmorMaterial.PEARLANIUM, ArmorItem.Type.HELMET, new Item.Settings()
+    .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(41))));
 
+    public static final ArmorItem PEARLANIUM_CHESTPLATE = register("pearlanium_chestplate",
+    new ArmorItem(ModArmorMaterial.PEARLANIUM, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+    .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(41))));
 
+    public static final ArmorItem PEARLANIUM_LEGGINGS = register("pearlanium_leggings",
+    new ArmorItem(ModArmorMaterial.PEARLANIUM, ArmorItem.Type.LEGGINGS, new Item.Settings()
+    .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(41))));
+
+    public static final ArmorItem PEARLANIUM_BOOTS = register("pearlanium_boots",
+    new ArmorItem(ModArmorMaterial.PEARLANIUM, ArmorItem.Type.BOOTS, new Item.Settings()
+    .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(41))));
 
 
     public static <T extends Item> T register(String name, T item) {

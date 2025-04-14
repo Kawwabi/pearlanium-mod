@@ -32,5 +32,16 @@ public class PearlaniumModItemTagProvider extends FabricTagProvider<Item> {
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(moditems.PEARLANIUM_HOE);
 
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+                .add(moditems.PEARLANIUM_HELMET);
+
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+                .add(moditems.PEARLANIUM_CHESTPLATE);
+
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+                .add(moditems.PEARLANIUM_CHESTPLATE);
+        
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+                .add(moditems.PEARLANIUM_CHESTPLATE);
     }
 }

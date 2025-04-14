@@ -105,7 +105,55 @@ public class PearlaniumModRecipeProvider extends FabricRecipeProvider {
         .criterion(hasItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.PEARLANIUM_SWORD) + "_smithing");
 
-        
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
+                Ingredient.ofItems(Items.NETHERITE_HELMET), // Base input (second slot)
+                Ingredient.ofItems(moditems.PEARLANIUM_INGOT), // Addition input (third slot)
+                RecipeCategory.COMBAT,
+                moditems.PEARLANIUM_HELMET // Resulting item
+        )
+        .criterion(hasItem(Items.NETHERITE_HELMET), conditionsFromItem(Items.NETHERITE_HELMET))
+        .criterion(hasItem(moditems.PEARLANIUM_INGOT), conditionsFromItem(moditems.PEARLANIUM_INGOT))
+        .criterion(hasItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
+        .offerTo(exporter, getRecipeName(moditems.PEARLANIUM_HELMET) + "_smithing");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
+                Ingredient.ofItems(Items.NETHERITE_CHESTPLATE), // Base input (second slot)
+                Ingredient.ofItems(moditems.PEARLANIUM_INGOT), // Addition input (third slot)
+                RecipeCategory.COMBAT,
+                moditems.PEARLANIUM_CHESTPLATE // Resulting item
+        )
+        .criterion(hasItem(Items.NETHERITE_CHESTPLATE), conditionsFromItem(Items.NETHERITE_CHESTPLATE))
+        .criterion(hasItem(moditems.PEARLANIUM_INGOT), conditionsFromItem(moditems.PEARLANIUM_INGOT))
+        .criterion(hasItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
+        .offerTo(exporter, getRecipeName(moditems.PEARLANIUM_CHESTPLATE) + "_smithing");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
+                Ingredient.ofItems(Items.NETHERITE_LEGGINGS), // Base input (second slot)
+                Ingredient.ofItems(moditems.PEARLANIUM_INGOT), // Addition input (third slot)
+                RecipeCategory.COMBAT,
+                moditems.PEARLANIUM_LEGGINGS // Resulting item
+        )
+        .criterion(hasItem(Items.NETHERITE_LEGGINGS), conditionsFromItem(Items.NETHERITE_LEGGINGS))
+        .criterion(hasItem(moditems.PEARLANIUM_INGOT), conditionsFromItem(moditems.PEARLANIUM_INGOT))
+        .criterion(hasItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
+        .offerTo(exporter, getRecipeName(moditems.PEARLANIUM_LEGGINGS) + "_smithing");
+
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
+                Ingredient.ofItems(Items.NETHERITE_BOOTS), // Base input (second slot)
+                Ingredient.ofItems(moditems.PEARLANIUM_INGOT), // Addition input (third slot)
+                RecipeCategory.COMBAT,
+                moditems.PEARLANIUM_BOOTS // Resulting item
+        )
+        .criterion(hasItem(Items.NETHERITE_BOOTS), conditionsFromItem(Items.NETHERITE_BOOTS))
+        .criterion(hasItem(moditems.PEARLANIUM_INGOT), conditionsFromItem(moditems.PEARLANIUM_INGOT))
+        .criterion(hasItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
+        .offerTo(exporter, getRecipeName(moditems.PEARLANIUM_BOOTS) + "_smithing");
+
+                
 
         List<ItemConvertible> modOres = List.of(modblocks.PEARLED_ORE);
 

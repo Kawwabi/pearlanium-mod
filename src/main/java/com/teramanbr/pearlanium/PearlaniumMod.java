@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.teramanbr.pearlanium.init.ModArmorMaterial;
 import com.teramanbr.pearlanium.init.modblocks;
 import com.teramanbr.pearlanium.init.moditemgroup;
 import com.teramanbr.pearlanium.init.moditems;
@@ -32,15 +33,20 @@ public class PearlaniumMod implements ModInitializer {
 		moditems.load();
 		modblocks.load();
 		moditemgroup.load();
+		ModArmorMaterial.load();
 		BiomeModificationInit.load();
 
 		// event handling
+
+		// ores
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
 			entries.addAfter(Items.ANCIENT_DEBRIS, modblocks.PEARLED_ORE);
 		});
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
 			entries.addAfter(Items.ANCIENT_DEBRIS, modblocks.PEARLED_ORE);
 		});
+		
+		// items
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
 			entries.addAfter(Items.NETHERITE_SCRAP, moditems.BRUTE_PEARLANIUM);
 		});
@@ -50,11 +56,18 @@ public class PearlaniumMod implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
 			entries.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE);
 		});
+
+		// blocks
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
 			entries.addAfter(Items.NETHERITE_BLOCK, modblocks.PEARLANIUM_BLOCK);
 		});
+
+		// tools
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
 			entries.addAfter(Items.NETHERITE_SWORD, moditems.PEARLANIUM_SWORD);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(Items.NETHERITE_AXE, moditems.PEARLANIUM_AXE);
 		});
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
 			entries.addAfter(Items.NETHERITE_HOE, moditems.PEARLANIUM_SHOVEL);
@@ -68,7 +81,21 @@ public class PearlaniumMod implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
 			entries.addAfter(moditems.PEARLANIUM_AXE, moditems.PEARLANIUM_HOE);
 		});
-		
+
+		// armor
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(Items.NETHERITE_BOOTS, moditems.PEARLANIUM_HELMET);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_HELMET, moditems.PEARLANIUM_CHESTPLATE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_CHESTPLATE, moditems.PEARLANIUM_LEGGINGS);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_LEGGINGS, moditems.PEARLANIUM_BOOTS);
+		});
+
 
 		//test message
 		LOGGER.info("Mod loaded!");
