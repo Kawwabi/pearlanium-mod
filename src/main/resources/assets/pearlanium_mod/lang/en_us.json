@@ -10,7 +10,12 @@
     "item.pearlanium_mod.pearlanium_leggings": "Pearlanium Leggings",
     "item.pearlanium_mod.pearlanium_boots": "Pearlanium Boots",
     "item.pearlanium_mod.pearlanium_hoe": "Pearlanium Hoe",
-    "item.pearlanium_mod.pearlanium_upgrade_smithing_template": "Pearlanium Upgrade Smithing Template",
+    "item.pearlanium_mod.pearlanium_upgrade_smithing_template": "Smithing Template",
+    "upgrade.pearlanium_mod.pearlanium_upgrade": "Pearlanium Upgrade",
+    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.applies_to": "Netherite Equipment",
+    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.ingredients": "Pearlanium Ingot",
+    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.base_slot_description": "Add netherite armor or tool",
+    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.additions_slot_description": "Add Pearlanium Ingot",
     "block.pearlanium_mod.pearled_ore": "Pearled Ore",
     "block.pearlanium_mod.pearlanium_block": "Pearlanium Block",
     "itemGroup.pearlanium_mod.pearlanium_group": "Pearlanium Mod"

@@ -13,10 +13,68 @@ import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.item.SmithingTemplateItem;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
+import java.util.List;
 
-public class moditems {
+    public class moditems {
+
+    // Text components for the Pearlanium Upgrade Smithing Template tooltip
+    private static final Text PEARLANIUM_UPGRADE_TEXT = Text.translatable(Util.createTranslationKey("upgrade", PearlaniumMod.id("pearlanium_upgrade"))).formatted(Formatting.GRAY);
+    private static final Text PEARLANIUM_UPGRADE_APPLIES_TO_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.applies_to"))).formatted(Formatting.BLUE);
+    private static final Text PEARLANIUM_UPGRADE_INGREDIENTS_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.ingredients"))).formatted(Formatting.BLUE);
+    private static final Text PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.base_slot_description")));
+    private static final Text PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.additions_slot_description")));
+
+// List of item icons to display in the smithing table UI empty slots (similar to Netherite upgrade)
+// You'll need textures for these if you want them to display properly.
+// Using vanilla empty slot textures as placeholders:
+    private static final Identifier EMPTY_SLOT_HELMET_TEXTURE = Identifier.of("item/empty_armor_slot_helmet");
+    private static final Identifier EMPTY_SLOT_CHESTPLATE_TEXTURE = Identifier.of("item/empty_armor_slot_chestplate");
+    private static final Identifier EMPTY_SLOT_LEGGINGS_TEXTURE = Identifier.of("item/empty_armor_slot_leggings");
+    private static final Identifier EMPTY_SLOT_BOOTS_TEXTURE = Identifier.of("item/empty_armor_slot_boots");
+    private static final Identifier EMPTY_SLOT_HOE_TEXTURE = Identifier.of("item/empty_slot_hoe");
+    private static final Identifier EMPTY_SLOT_AXE_TEXTURE = Identifier.of("item/empty_slot_axe");
+    private static final Identifier EMPTY_SLOT_SWORD_TEXTURE = Identifier.of("item/empty_slot_sword");
+    private static final Identifier EMPTY_SLOT_SHOVEL_TEXTURE = Identifier.of("item/empty_slot_shovel");
+    private static final Identifier EMPTY_SLOT_PICKAXE_TEXTURE = Identifier.of("item/empty_slot_pickaxe");
+    // Assuming your upgrade uses Pearlanium Ingots
+    private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = Identifier.of("item/empty_slot_ingot"); // Or your Pearlanium Ingot texture path if preferred
+
+
+    private static final List<Identifier> PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES = List.of(
+        EMPTY_SLOT_HELMET_TEXTURE,
+        EMPTY_SLOT_SWORD_TEXTURE,
+        EMPTY_SLOT_CHESTPLATE_TEXTURE,
+        EMPTY_SLOT_PICKAXE_TEXTURE,
+        EMPTY_SLOT_LEGGINGS_TEXTURE,
+        EMPTY_SLOT_AXE_TEXTURE,
+        EMPTY_SLOT_BOOTS_TEXTURE,
+        EMPTY_SLOT_HOE_TEXTURE,
+        EMPTY_SLOT_SHOVEL_TEXTURE
+    );
+    private static final List<Identifier> PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES = List.of(
+            EMPTY_SLOT_INGOT_TEXTURE // Represents the Pearlanium Ingot slot
+    );
+
+    public static final Item PEARLANIUM_UPGRADE_SMITHING_TEMPLATE = register( "pearlanium_upgrade_smithing_template",
+        new SmithingTemplateItem(
+                PEARLANIUM_UPGRADE_APPLIES_TO_TEXT, // Text: "Applies to: ..."
+                PEARLANIUM_UPGRADE_INGREDIENTS_TEXT, // Text: "Ingredients: ..."
+                PEARLANIUM_UPGRADE_TEXT, // Text: "Pearlanium Upgrade" (title)
+                PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, // Text for base slot hover
+                PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT, // Text for additions slot hover
+                PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES, // Icons for empty base slots
+                PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // Icons for empty addition slots
+        ));
+
+
+
+
     public static final Item BRUTE_PEARLANIUM = register( "brute_pearlanium", new Item(new Item.Settings()));
-    public static final Item PEARLANIUM_UPGRADE_SMITHING_TEMPLATE = register( "pearlanium_upgrade_smithing_template", new Item(new Item.Settings()));
     public static final Item PEARLANIUM_INGOT = register( "pearlanium_ingot", new Item(new Item.Settings()));
 
     public static final SwordItem PEARLANIUM_SWORD = register("pearlanium_sword",
