@@ -2,8 +2,16 @@ package com.teramanbr.pearlanium;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTables;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 
 import org.slf4j.Logger;
@@ -96,6 +104,29 @@ public class PearlaniumMod implements ModInitializer {
 			entries.addAfter(moditems.PEARLANIUM_LEGGINGS, moditems.PEARLANIUM_BOOTS);
 		});
 
+
+    LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
+        if (LootTables.END_CITY_TREASURE_CHEST.equals(key)) {
+            LootPool.Builder poolBuilder = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0f))
+                .conditionally(RandomChanceLootCondition.builder(0.25f))
+                .with(ItemEntry.builder(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE)
+                		.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f))));
+            tableBuilder.pool(poolBuilder);
+			LootPool.Builder poolBuilder2 = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0f))
+                .conditionally(RandomChanceLootCondition.builder(0.16f))
+                .with(ItemEntry.builder(moditems.PEARLANIUM_INGOT)
+                		.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f))));
+            tableBuilder.pool(poolBuilder2);
+			LootPool.Builder poolBuilder3 = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0f))
+                .conditionally(RandomChanceLootCondition.builder(0.244f))
+                .with(ItemEntry.builder(moditems.BRUTE_PEARLANIUM)
+                		.apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f))));
+            tableBuilder.pool(poolBuilder3);
+        }
+    });
 
 		//test message
 		LOGGER.info("Mod loaded!");

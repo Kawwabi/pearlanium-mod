@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.registry.RegistryWrapper.WrapperLookup;
 
+
 public class PearlaniumModBlockLootTableProvider extends FabricBlockLootTableProvider {
     public PearlaniumModBlockLootTableProvider(FabricDataOutput dataOutput,
             CompletableFuture<WrapperLookup> registryLookup) {

@@ -29,9 +29,6 @@ import java.util.List;
     private static final Text PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.base_slot_description")));
     private static final Text PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.additions_slot_description")));
 
-// List of item icons to display in the smithing table UI empty slots (similar to Netherite upgrade)
-// You'll need textures for these if you want them to display properly.
-// Using vanilla empty slot textures as placeholders:
     private static final Identifier EMPTY_SLOT_HELMET_TEXTURE = Identifier.of("item/empty_armor_slot_helmet");
     private static final Identifier EMPTY_SLOT_CHESTPLATE_TEXTURE = Identifier.of("item/empty_armor_slot_chestplate");
     private static final Identifier EMPTY_SLOT_LEGGINGS_TEXTURE = Identifier.of("item/empty_armor_slot_leggings");
@@ -41,9 +38,7 @@ import java.util.List;
     private static final Identifier EMPTY_SLOT_SWORD_TEXTURE = Identifier.of("item/empty_slot_sword");
     private static final Identifier EMPTY_SLOT_SHOVEL_TEXTURE = Identifier.of("item/empty_slot_shovel");
     private static final Identifier EMPTY_SLOT_PICKAXE_TEXTURE = Identifier.of("item/empty_slot_pickaxe");
-    // Assuming your upgrade uses Pearlanium Ingots
-    private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = Identifier.of("item/empty_slot_ingot"); // Or your Pearlanium Ingot texture path if preferred
-
+    private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = Identifier.of("item/empty_slot_ingot");
 
     private static final List<Identifier> PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES = List.of(
         EMPTY_SLOT_HELMET_TEXTURE,
@@ -70,9 +65,6 @@ import java.util.List;
                 PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES, // Icons for empty base slots
                 PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // Icons for empty addition slots
         ));
-
-
-
 
     public static final Item BRUTE_PEARLANIUM = register( "brute_pearlanium", new Item(new Item.Settings()));
     public static final Item PEARLANIUM_INGOT = register( "pearlanium_ingot", new Item(new Item.Settings()));
