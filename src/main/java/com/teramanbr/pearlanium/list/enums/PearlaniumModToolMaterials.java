@@ -3,6 +3,7 @@ package com.teramanbr.pearlanium.list.enums;
 import com.teramanbr.pearlanium.init.moditems;
 import com.teramanbr.pearlanium.list.TagList;
 import net.minecraft.block.Block;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.TagKey;
@@ -15,6 +16,13 @@ public enum PearlaniumModToolMaterials implements ToolMaterial {
             TagList.Blocks.INCORRECT_FOR_PEARLANIUM_TOOL,
             15,
             Ingredient.ofItems(moditems.PEARLANIUM_INGOT)
+    ), REINFORCED_PEARLANIUM(
+            4000,
+            15.0f,
+            6.0f,
+            TagList.Blocks.INCORRECT_FOR_PEARLANIUM_TOOL,
+            15,
+            Ingredient.ofItems(Items.ECHO_SHARD)
     );
 
     private final int durability;

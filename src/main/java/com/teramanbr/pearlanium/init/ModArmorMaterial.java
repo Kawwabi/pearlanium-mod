@@ -3,6 +3,7 @@ package com.teramanbr.pearlanium.init;
 import com.teramanbr.pearlanium.PearlaniumMod;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -27,6 +28,19 @@ public class ModArmorMaterial {
             3.5F,
             0.1F,
             false);
+
+        public static final RegistryEntry<ArmorMaterial> REINFORCED_PEARLANIUM = register("reinforced_pearlanium", Map.of(
+                ArmorItem.Type.HELMET, 5,
+                ArmorItem.Type.CHESTPLATE, 10,
+                ArmorItem.Type.LEGGINGS, 8,
+                ArmorItem.Type.BOOTS, 5
+        ),
+                22,
+                SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,
+                () -> Ingredient.ofItems(Items.ECHO_SHARD),
+                4,
+                0.2F,
+                false);
 
     public static RegistryEntry<ArmorMaterial> register(String id, Map<ArmorItem.Type, Integer> defensePoints,
                                                         int enchantability, RegistryEntry<SoundEvent> equipSound,

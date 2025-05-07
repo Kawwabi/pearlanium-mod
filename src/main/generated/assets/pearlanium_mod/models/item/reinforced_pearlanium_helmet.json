@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "pearlanium_mod:item/reinforced_pearlanium_helmet"
+  }
+}

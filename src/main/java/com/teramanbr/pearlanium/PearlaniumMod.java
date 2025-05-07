@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.teramanbr.pearlanium.init.ModArmorMaterial;
+import com.teramanbr.pearlanium.init.PearlaniumModLootTableModifiers;
 import com.teramanbr.pearlanium.init.modblocks;
 import com.teramanbr.pearlanium.init.moditemgroup;
 import com.teramanbr.pearlanium.init.moditems;
@@ -43,6 +44,9 @@ public class PearlaniumMod implements ModInitializer {
 		moditemgroup.load();
 		ModArmorMaterial.load();
 		BiomeModificationInit.load();
+
+		// load loot table modifiers
+		PearlaniumModLootTableModifiers.addLootTableModifiers();
 
 		// event handling
 

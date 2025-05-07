@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "N": {
+      "item": "minecraft:end_stone"
+    },
+    "P": {
+      "item": "pearlanium_mod:pearlanium_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "EPE",
+    "ENE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pearlanium_mod:pearlanium_upgrade_smithing_template"
+  }
+}
