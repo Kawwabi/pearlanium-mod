@@ -1,6 +1,7 @@
 package com.teramanbr.pearlanium;
 
 import com.teramanbr.pearlanium.data.generator.PearlaniumModWorldGenerator;
+import com.teramanbr.pearlanium.data.provider.PearlaniumModAdvancementsProvider;
 import com.teramanbr.pearlanium.data.provider.PearlaniumModBlockLootTableProvider;
 import com.teramanbr.pearlanium.data.provider.PearlaniumModBlockTagProvider;
 import com.teramanbr.pearlanium.data.provider.PearlaniumModItemTagProvider;
@@ -24,6 +25,7 @@ public class PearlaniumModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(PearlaniumModWorldGenerator::new);
         pack.addProvider(PearlaniumModRecipeProvider::new);
         pack.addProvider(PearlaniumModItemTagProvider::new);
+        pack.addProvider(PearlaniumModAdvancementsProvider::new); // Add this line
     }
 
     @Override

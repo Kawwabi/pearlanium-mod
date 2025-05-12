@@ -58,6 +58,16 @@ public class PearlaniumModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
                 .offerTo(exporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, moditems.CALIBRATED_ECHO_SHARD)
+                .input('E', Items.ECHO_SHARD)
+                .input('A', Items.AMETHYST_BLOCK)
+                .pattern("E  ")
+                .pattern(" A ")
+                .pattern("  E")
+                .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+                .criterion(hasItem(Items.AMETHYST_BLOCK), conditionsFromItem(Items.AMETHYST_BLOCK))
+                .offerTo(exporter);
+
 
         // Pearlanium Tools
         SmithingTransformRecipeJsonBuilder.create(
@@ -125,60 +135,60 @@ public class PearlaniumModRecipeProvider extends FabricRecipeProvider {
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_PICKAXE), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.TOOLS, // Appropriate category
                 moditems.REINFORCED_PEARLANIUM_PICKAXE // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_PICKAXE), conditionsFromItem(moditems.PEARLANIUM_PICKAXE))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_PICKAXE) + "_smithing");
 
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_AXE), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.TOOLS, // Appropriate category
                 moditems.REINFORCED_PEARLANIUM_AXE // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_AXE), conditionsFromItem(moditems.PEARLANIUM_AXE))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_AXE) + "_smithing");
 
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_SHOVEL), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.TOOLS, // Appropriate category
                 moditems.REINFORCED_PEARLANIUM_SHOVEL // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_SHOVEL), conditionsFromItem(moditems.PEARLANIUM_SHOVEL))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_SHOVEL) + "_smithing");
 
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_HOE), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.TOOLS, // Appropriate category
                 moditems.REINFORCED_PEARLANIUM_HOE // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_HOE), conditionsFromItem(moditems.PEARLANIUM_HOE))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_HOE) + "_smithing");
 
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_SWORD), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.COMBAT, // Appropriate category
                 moditems.REINFORCED_PEARLANIUM_SWORD // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_SWORD), conditionsFromItem(moditems.PEARLANIUM_SWORD))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_SWORD) + "_smithing");
 
@@ -237,48 +247,48 @@ public class PearlaniumModRecipeProvider extends FabricRecipeProvider {
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_HELMET), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.COMBAT,
                 moditems.REINFORCED_PEARLANIUM_HELMET // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_HELMET), conditionsFromItem(moditems.PEARLANIUM_HELMET))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_HELMET) + "_smithing");
 
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_CHESTPLATE), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.COMBAT,
                 moditems.REINFORCED_PEARLANIUM_CHESTPLATE // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_CHESTPLATE), conditionsFromItem(moditems.PEARLANIUM_CHESTPLATE))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_CHESTPLATE) + "_smithing");
 
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_LEGGINGS), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.COMBAT,
                 moditems.REINFORCED_PEARLANIUM_LEGGINGS // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_LEGGINGS), conditionsFromItem(moditems.PEARLANIUM_LEGGINGS))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_LEGGINGS) + "_smithing");
 
         SmithingTransformRecipeJsonBuilder.create(
                 Ingredient.ofItems(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), // Template input (first slot)
                 Ingredient.ofItems(moditems.PEARLANIUM_BOOTS), // Base input (second slot)
-                Ingredient.ofItems(Items.ECHO_SHARD), // Addition input (third slot)
+                Ingredient.ofItems(moditems.CALIBRATED_ECHO_SHARD), // Addition input (third slot)
                 RecipeCategory.COMBAT,
                 moditems.REINFORCED_PEARLANIUM_BOOTS // Resulting item
         )
         .criterion(hasItem(moditems.PEARLANIUM_BOOTS), conditionsFromItem(moditems.PEARLANIUM_BOOTS))
-        .criterion(hasItem(Items.ECHO_SHARD), conditionsFromItem(Items.ECHO_SHARD))
+        .criterion(hasItem(moditems.CALIBRATED_ECHO_SHARD), conditionsFromItem(moditems.CALIBRATED_ECHO_SHARD))
         .criterion(hasItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE), conditionsFromItem(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
         .offerTo(exporter, getRecipeName(moditems.REINFORCED_PEARLANIUM_BOOTS) + "_smithing");
 

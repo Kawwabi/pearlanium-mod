@@ -43,5 +43,32 @@ public class PearlaniumModItemTagProvider extends FabricTagProvider<Item> {
         
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
                 .add(moditems.PEARLANIUM_CHESTPLATE);
+
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(moditems.REINFORCED_PEARLANIUM_SWORD);
+
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(moditems.REINFORCED_PEARLANIUM_PICKAXE);
+
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(moditems.REINFORCED_PEARLANIUM_SHOVEL);
+
+        getOrCreateTagBuilder(ItemTags.AXES)
+                .add(moditems.REINFORCED_PEARLANIUM_AXE);
+
+        getOrCreateTagBuilder(ItemTags.HOES)
+                .add(moditems.REINFORCED_PEARLANIUM_HOE);
+
+        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
+                .add(moditems.REINFORCED_PEARLANIUM_HELMET);
+
+        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
+                .add(moditems.REINFORCED_PEARLANIUM_CHESTPLATE);
+
+        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
+                .add(moditems.REINFORCED_PEARLANIUM_CHESTPLATE);
+        
+        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
+                .add(moditems.REINFORCED_PEARLANIUM_CHESTPLATE);
     }
 }

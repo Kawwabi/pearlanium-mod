@@ -1,6 +1,7 @@
 {
     "item.pearlanium_mod.brute_pearlanium": "Perolânio Bruto",
     "item.pearlanium_mod.pearlanium_ingot": "Barra de Perolânio",
+    "item.pearlanium_mod.calibrated_echo_shard": "Fragmento de Eco Calibrado",
 
     "item.pearlanium_mod.pearlanium_sword": "Espada de Perolânio",
     "item.pearlanium_mod.pearlanium_axe": "Machado de Perolânio",
@@ -26,19 +27,28 @@
     "item.pearlanium_mod.reinforced_pearlanium_boots": "Botas Reforçadas de Perolânio",
     "item.pearlanium_mod.reinforced_pearlanium_upgrade_smithing_template": "Molde de Ferraria",
 
-    "upgrade.pearlanium_mod.pearlanium_upgrade": "Melhoria de perolânio",
+    "upgrade.pearlanium_mod.pearlanium_upgrade": "Melhoria de Perolânio",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.applies_to": "Equipamento de Netherita",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.ingredients": "Barra de Perolânio",
-    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.base_slot_description": "Adicione ferramenta ou armadura de netherita",
+    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.base_slot_description": "Adicione uma ferramenta, arma ou armadura de netherita",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.additions_slot_description": "Adicione Barra de Perolânio",
 
     "upgrade.pearlanium_mod.reinforced_pearlanium_upgrade": "Melhoria de Perolânio Reforçado",
     "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.applies_to": "Equipamento de Perolânio",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.ingredients": "Fragmento de Eco",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.base_slot_description": "Adicione ferramenta ou armadura de Perolânio",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.additions_slot_description": "Adicione Fragmento de Eco",
+    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.ingredients": "Fragmento de Eco Calibrado",
+    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.base_slot_description": "Adicione uma ferramenta, arma ou armadura de perolânio",
+    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.additions_slot_description": "Adicione um Fragmento de Eco Calibrado",
 
     "block.pearlanium_mod.pearled_ore": "Minério Perolado",
     "block.pearlanium_mod.pearlanium_block": "Bloco de Perolânio",
-    "itemGroup.pearlanium_mod.pearlanium_group": "Mod Perolânio"
+    "itemGroup.pearlanium_mod.pearlanium_group": "Mod Perolânio",
+
+    "advancement.pearlanium.root.title": "Titânio... só que mais estranho",
+    "advancement.pearlanium.root.description": "Obtenha seu primeiro Perolânio Bruto",
+    "advancement.pearlanium.full_armor.title": "Assim como os ancestrais pretendiam",
+    "advancement.pearlanium.full_armor.description": "Obtenha uma armadura completa de Perolânio",
+    "advancement.pearlanium.wardens_heart.title": "O coração do defensor",
+    "advancement.pearlanium.wardens_heart.description": "Mate o defensor e obtenha seu coração... Pode ser útil para algo",
+    "advancement.pearlanium.reinforced_full_armor.title": "Continuando o legado",
+    "advancement.pearlanium.reinforced_full_armor.description": "Obtenha uma armadura completa de Perolânio Reforçado"
 }

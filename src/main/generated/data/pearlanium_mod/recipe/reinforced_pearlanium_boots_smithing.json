@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "minecraft:echo_shard"
+    "item": "pearlanium_mod:calibrated_echo_shard"
   },
   "base": {
     "item": "pearlanium_mod:pearlanium_boots"

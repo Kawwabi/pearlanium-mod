@@ -20,7 +20,7 @@ public enum PearlaniumModToolMaterials implements ToolMaterial {
             4000,
             15.0f,
             6.0f,
-            TagList.Blocks.INCORRECT_FOR_PEARLANIUM_TOOL,
+            TagList.Blocks.INCORRECT_FOR_REINFORCED_PEARLANIUM_TOOL,
             15,
             Ingredient.ofItems(Items.ECHO_SHARD)
     );

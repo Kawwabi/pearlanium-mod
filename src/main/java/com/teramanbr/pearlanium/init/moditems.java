@@ -114,6 +114,7 @@ import java.util.List;
     // Items
     public static final Item BRUTE_PEARLANIUM = register( "brute_pearlanium", new Item(new Item.Settings()));
     public static final Item PEARLANIUM_INGOT = register( "pearlanium_ingot", new Item(new Item.Settings()));
+    public static final Item CALIBRATED_ECHO_SHARD = register( "calibrated_echo_shard", new Item(new Item.Settings()));
 
     // Pearlanium Tools
     public static final SwordItem PEARLANIUM_SWORD = register("pearlanium_sword",

@@ -14,9 +14,18 @@ public class TagList {
                 TagKey.of(RegistryKeys.BLOCK, PearlaniumMod.id("incorrect_for_pearlanium_tool"));
 
         public static final TagKey<Block> PEARLANIUM_LOGS = TagKey.of(RegistryKeys.BLOCK, PearlaniumMod.id("pearlanium_logs"));
+
+        public static final TagKey<Block> REINFORCED_PEARLANIUM_TAG = TagKey.of(RegistryKeys.BLOCK, PearlaniumMod.id("reinforced_pearlanium"));
+
+        public static final TagKey<Block> INCORRECT_FOR_REINFORCED_PEARLANIUM_TOOL = 
+                TagKey.of(RegistryKeys.BLOCK, PearlaniumMod.id("incorrect_for_reinforced_pearlanium_tool"));
+            
+        public static final TagKey<Block> REINFORCED_PEARLANIUM_LOGS = TagKey.of(RegistryKeys.BLOCK, PearlaniumMod.id("reinforced_pearlanium_logs"));
     }
 
     public static class Items {
         public static final TagKey<Item> PEARLANIUM_LOGS = TagKey.of(RegistryKeys.ITEM, PearlaniumMod.id("pearlanium_logs"));
+
+        public static final TagKey<Item> REINFORCED_PEARLANIUM_LOGS = TagKey.of(RegistryKeys.ITEM, PearlaniumMod.id("reinforced_pearlanium_logs"));
     }
 }

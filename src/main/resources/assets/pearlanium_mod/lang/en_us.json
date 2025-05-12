@@ -1,6 +1,7 @@
 {
     "item.pearlanium_mod.brute_pearlanium": "Brute Pearlanium",
     "item.pearlanium_mod.pearlanium_ingot": "Pearlanium Ingot",
+    "item.pearlanium_mod.calibrated_echo_shard": "Calibrated Echo Shard",
 
     "item.pearlanium_mod.pearlanium_sword": "Pearlanium Sword",
     "item.pearlanium_mod.pearlanium_axe": "Pearlanium Axe",
@@ -24,21 +25,30 @@
     "item.pearlanium_mod.reinforced_pearlanium_chestplate": "Reinforced Pearlanium Chestplate",
     "item.pearlanium_mod.reinforced_pearlanium_leggings": "Reinforced Pearlanium Leggings",
     "item.pearlanium_mod.reinforced_pearlanium_boots": "Reinforced Pearlanium Boots",
-    "item.pearlanium_mod.reinforced_pearlanium_upgrade_smithing_template": "Reinforced Pearlanium Upgrade Smithing Template",
+    "item.pearlanium_mod.reinforced_pearlanium_upgrade_smithing_template": "Smithing Template",
 
     "upgrade.pearlanium_mod.pearlanium_upgrade": "Pearlanium Upgrade",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.applies_to": "Netherite Equipment",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.ingredients": "Pearlanium Ingot",
-    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.base_slot_description": "Add netherite armor or tool",
+    "item.pearlanium_mod.smithing_template.pearlanium_upgrade.base_slot_description": "Add netherite armor, weapon or tool",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.additions_slot_description": "Add Pearlanium Ingot",
 
     "upgrade.pearlanium_mod.reinforced_pearlanium_upgrade": "Reinforced Upgrade",
     "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.applies_to": "Pearlanium Equipment",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.ingredients": "Echo Shard",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.base_slot_description": "Add Pearlanium armor or tool",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.additions_slot_description": "Add Echo Shard",
+    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.ingredients": "Calibrated Echo Shard",
+    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.base_slot_description": "Add pearlanium armor, weapon or tool",
+    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.additions_slot_description": "Add Calibrated Echo Shard",
 
     "block.pearlanium_mod.pearled_ore": "Pearled Ore",
     "block.pearlanium_mod.pearlanium_block": "Pearlanium Block",
-    "itemGroup.pearlanium_mod.pearlanium_group": "Pearlanium Mod"
+    "itemGroup.pearlanium_mod.pearlanium_group": "Pearlanium Mod",
+
+    "advancement.pearlanium.root.title": "Titanium... but weirder",
+    "advancement.pearlanium.root.description": "Obtain your first Brute Pearlanium",
+    "advancement.pearlanium.full_armor.title": "Just like the ancestors intended",
+    "advancement.pearlanium.full_armor.description": "Obtain a full set of Pearlanium armor",
+    "advancement.pearlanium.wardens_heart.title": "The warden's heart",
+    "advancement.pearlanium.wardens_heart.description": "Kill the warden and obtain it's heart... It might be useful for something",
+    "advancement.pearlanium.reinforced_full_armor.title": "Continuing the legacy",
+    "advancement.pearlanium.reinforced_full_armor.description": "Obtain a full set of Reinforced Pearlanium armor"
 }

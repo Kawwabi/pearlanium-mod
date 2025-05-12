@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_echo_shard": {
+    "has_calibrated_echo_shard": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:echo_shard"
+            "items": "pearlanium_mod:calibrated_echo_shard"
           }
         ]
       },
@@ -42,7 +42,7 @@
     [
       "has_the_recipe",
       "has_pearlanium_leggings",
-      "has_echo_shard",
+      "has_calibrated_echo_shard",
       "has_reinforced_pearlanium_upgrade_smithing_template"
     ]
   ],

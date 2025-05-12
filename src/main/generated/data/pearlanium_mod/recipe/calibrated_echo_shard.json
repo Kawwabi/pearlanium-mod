@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_block"
+    },
+    "E": {
+      "item": "minecraft:echo_shard"
+    }
+  },
+  "pattern": [
+    "E  ",
+    " A ",
+    "  E"
+  ],
+  "result": {
+    "count": 1,
+    "id": "pearlanium_mod:calibrated_echo_shard"
+  }
+}
