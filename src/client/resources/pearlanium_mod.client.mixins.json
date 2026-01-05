@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "com.teramanbr.pearlanium.mixin.client",
+	"package": "com.kawwabi.pearlanium.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"ExampleClientMixin"
