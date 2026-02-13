@@ -10,14 +10,14 @@ import net.minecraft.registry.tag.TagKey;
 
 public enum PearlaniumModToolMaterials implements ToolMaterial {
     PEARLANIUM(
-            3430,
+            2640,
             12.0f,
             5.0f,
             TagList.Blocks.INCORRECT_FOR_PEARLANIUM_TOOL,
             15,
             Ingredient.ofItems(moditems.PEARLANIUM_INGOT)
     ), WARDIUM(
-            4000,
+            3440,
             15.0f,
             6.0f,
             TagList.Blocks.INCORRECT_FOR_WARDIUM_TOOL,

@@ -3,7 +3,8 @@
 	"package": "com.kawwabi.pearlanium.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"WardiumArmorMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

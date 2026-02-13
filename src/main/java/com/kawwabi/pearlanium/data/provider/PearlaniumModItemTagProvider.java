@@ -39,10 +39,10 @@ public class PearlaniumModItemTagProvider extends FabricTagProvider<Item> {
                 .add(moditems.PEARLANIUM_CHESTPLATE);
 
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
-                .add(moditems.PEARLANIUM_CHESTPLATE);
+                .add(moditems.PEARLANIUM_LEGGINGS);
         
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
-                .add(moditems.PEARLANIUM_CHESTPLATE);
+                .add(moditems.PEARLANIUM_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
                 .add(moditems.WARDIUM_SWORD);
@@ -66,9 +66,9 @@ public class PearlaniumModItemTagProvider extends FabricTagProvider<Item> {
                 .add(moditems.WARDIUM_CHESTPLATE);
 
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
-                .add(moditems.WARDIUM_CHESTPLATE);
+                .add(moditems.WARDIUM_LEGGINGS);
         
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
-                .add(moditems.WARDIUM_CHESTPLATE);
+                .add(moditems.WARDIUM_BOOTS);
     }
 }
