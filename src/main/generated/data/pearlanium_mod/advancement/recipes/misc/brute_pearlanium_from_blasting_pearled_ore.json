@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:brute_pearlanium_from_blasting_pearled_ore"
+        "recipe": "pearlanium_mod:brute_pearlanium_from_blasting_pearled_ore"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:brute_pearlanium_from_blasting_pearled_ore"
+      "pearlanium_mod:brute_pearlanium_from_blasting_pearled_ore"
     ]
   }
 }

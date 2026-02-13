@@ -29,7 +29,7 @@ public class ModArmorMaterial {
             0.1F,
             false);
 
-        public static final RegistryEntry<ArmorMaterial> REINFORCED_PEARLANIUM = register("reinforced_pearlanium", Map.of(
+        public static final RegistryEntry<ArmorMaterial> WARDIUM = register("wardium", Map.of(
                 ArmorItem.Type.HELMET, 5,
                 ArmorItem.Type.CHESTPLATE, 10,
                 ArmorItem.Type.LEGGINGS, 8,

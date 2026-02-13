@@ -4,13 +4,13 @@
     "item": "pearlanium_mod:calibrated_echo_shard"
   },
   "base": {
-    "item": "pearlanium_mod:pearlanium_sword"
+    "item": "pearlanium_mod:pearlanium_pickaxe"
   },
   "result": {
     "count": 1,
-    "id": "pearlanium_mod:reinforced_pearlanium_sword"
+    "id": "pearlanium_mod:wardium_pickaxe"
   },
   "template": {
-    "item": "pearlanium_mod:reinforced_pearlanium_upgrade_smithing_template"
+    "item": "pearlanium_mod:wardium_upgrade_smithing_template"
   }
 }

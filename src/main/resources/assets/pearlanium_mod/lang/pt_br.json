@@ -9,11 +9,11 @@
     "item.pearlanium_mod.pearlanium_shovel": "Pá de Perolânio",
     "item.pearlanium_mod.pearlanium_hoe": "Enxada de Perolânio",
 
-    "item.pearlanium_mod.reinforced_pearlanium_sword": "Espada Reforçada de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_axe": "Machado Reforçado de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_pickaxe": "Picareta Reforçada de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_shovel": "Pá Reforçada de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_hoe": "Enxada Reforçado de Perolânio",
+    "item.pearlanium_mod.wardium_sword": "Espada de Defensório",
+    "item.pearlanium_mod.wardium_axe": "Machado de Defensório",
+    "item.pearlanium_mod.wardium_pickaxe": "Picareta de Defensório",
+    "item.pearlanium_mod.wardium_shovel": "Pá de Defensório",
+    "item.pearlanium_mod.wardium_hoe": "Enxada de Defensório",
 
     "item.pearlanium_mod.pearlanium_helmet": "Capacete de Perolânio",
     "item.pearlanium_mod.pearlanium_chestplate": "Peitoral de Perolânio",
@@ -21,11 +21,11 @@
     "item.pearlanium_mod.pearlanium_boots": "Botas de Perolânio",
     "item.pearlanium_mod.pearlanium_upgrade_smithing_template": "Molde de Ferraria",
 
-    "item.pearlanium_mod.reinforced_pearlanium_helmet": "Capacete Reforçado de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_chestplate": "Peitoral Reforçado de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_leggings": "Calças Reforçadas de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_boots": "Botas Reforçadas de Perolânio",
-    "item.pearlanium_mod.reinforced_pearlanium_upgrade_smithing_template": "Molde de Ferraria",
+    "item.pearlanium_mod.wardium_helmet": "Capacete de Defensório",
+    "item.pearlanium_mod.wardium_chestplate": "Peitoral de Defensório",
+    "item.pearlanium_mod.wardium_leggings": "Calças de Defensório",
+    "item.pearlanium_mod.wardium_boots": "Botas de Defensório",
+    "item.pearlanium_mod.wardium_upgrade_smithing_template": "Molde de Ferraria",
 
     "upgrade.pearlanium_mod.pearlanium_upgrade": "Melhoria de Perolânio",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.applies_to": "Equipamento de Netherita",
@@ -33,11 +33,11 @@
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.base_slot_description": "Adicione uma ferramenta, arma ou armadura de netherita",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.additions_slot_description": "Adicione Barra de Perolânio",
 
-    "upgrade.pearlanium_mod.reinforced_pearlanium_upgrade": "Melhoria de Perolânio Reforçado",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.applies_to": "Equipamento de Perolânio",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.ingredients": "Fragmento de Eco Calibrado",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.base_slot_description": "Adicione uma ferramenta, arma ou armadura de perolânio",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.additions_slot_description": "Adicione um Fragmento de Eco Calibrado",
+    "upgrade.pearlanium_mod.wardium_upgrade": "Melhoria de Defensório",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.applies_to": "Equipamento de Perolânio",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.ingredients": "Fragmento de Eco Calibrado",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.base_slot_description": "Adicione uma ferramenta, arma ou armadura de perolânio",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.additions_slot_description": "Adicione um Fragmento de Eco Calibrado",
 
     "block.pearlanium_mod.pearled_ore": "Minério Perolado",
     "block.pearlanium_mod.pearlanium_block": "Bloco de Perolânio",
@@ -49,6 +49,6 @@
     "advancement.pearlanium.full_armor.description": "Obtenha uma armadura completa de Perolânio",
     "advancement.pearlanium.wardens_heart.title": "O coração do defensor",
     "advancement.pearlanium.wardens_heart.description": "Mate o defensor e obtenha seu coração... Pode ser útil para algo",
-    "advancement.pearlanium.reinforced_full_armor.title": "Continuando o legado",
-    "advancement.pearlanium.reinforced_full_armor.description": "Obtenha uma armadura completa de Perolânio Reforçado"
+    "advancement.pearlanium.wardium_full_armor.title": "Continuando o legado",
+    "advancement.pearlanium.wardium_full_armor.description": "Obtenha uma armadura completa de Defensório"
 }

@@ -1,41 +1,41 @@
 {
   "parent": "pearlanium:full_pearlanium_armor",
   "criteria": {
-    "has_reinforced_pearlanium_boots": {
+    "has_wardium_boots": {
       "conditions": {
         "items": [
           {
-            "items": "pearlanium_mod:reinforced_pearlanium_boots"
+            "items": "pearlanium_mod:wardium_boots"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_reinforced_pearlanium_chestplate": {
+    "has_wardium_chestplate": {
       "conditions": {
         "items": [
           {
-            "items": "pearlanium_mod:reinforced_pearlanium_chestplate"
+            "items": "pearlanium_mod:wardium_chestplate"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_reinforced_pearlanium_helmet": {
+    "has_wardium_helmet": {
       "conditions": {
         "items": [
           {
-            "items": "pearlanium_mod:reinforced_pearlanium_helmet"
+            "items": "pearlanium_mod:wardium_helmet"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_reinforced_pearlanium_leggings": {
+    "has_wardium_leggings": {
       "conditions": {
         "items": [
           {
-            "items": "pearlanium_mod:reinforced_pearlanium_leggings"
+            "items": "pearlanium_mod:wardium_leggings"
           }
         ]
       },
@@ -44,29 +44,29 @@
   },
   "display": {
     "description": {
-      "translate": "advancement.pearlanium.reinforced_full_armor.description"
+      "translate": "advancement.pearlanium.wardium_full_armor.description"
     },
     "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "pearlanium_mod:reinforced_pearlanium_chestplate"
+      "id": "pearlanium_mod:wardium_chestplate"
     },
     "title": {
-      "translate": "advancement.pearlanium.reinforced_full_armor.title"
+      "translate": "advancement.pearlanium.wardium_full_armor.title"
     }
   },
   "requirements": [
     [
-      "has_reinforced_pearlanium_helmet"
+      "has_wardium_helmet"
     ],
     [
-      "has_reinforced_pearlanium_chestplate"
+      "has_wardium_chestplate"
     ],
     [
-      "has_reinforced_pearlanium_leggings"
+      "has_wardium_leggings"
     ],
     [
-      "has_reinforced_pearlanium_boots"
+      "has_wardium_boots"
     ]
   ],
   "sends_telemetry_event": true

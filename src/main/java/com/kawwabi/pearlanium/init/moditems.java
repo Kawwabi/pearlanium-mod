@@ -67,48 +67,48 @@ import java.util.List;
         ));
 
 
-    // Reinforced Pearlanium Upgrade Smithing Template
-    private static final Text REINFORCED_PEARLANIUM_UPGRADE_TEXT = Text.translatable(Util.createTranslationKey("upgrade", PearlaniumMod.id("reinforced_pearlanium_upgrade"))).formatted(Formatting.GRAY);
-    private static final Text REINFORCED_PEARLANIUM_UPGRADE_APPLIES_TO_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.reinforced_pearlanium_upgrade.applies_to"))).formatted(Formatting.BLUE);
-    private static final Text REINFORCED_PEARLANIUM_UPGRADE_INGREDIENTS_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.reinforced_pearlanium_upgrade.ingredients"))).formatted(Formatting.BLUE);
-    private static final Text REINFORCED_PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.reinforced_pearlanium_upgrade.base_slot_description")));
-    private static final Text REINFORCED_PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.reinforced_pearlanium_upgrade.additions_slot_description")));
+    // Wardium Upgrade Smithing Template
+    private static final Text WARDIUM_UPGRADE_TEXT = Text.translatable(Util.createTranslationKey("upgrade", PearlaniumMod.id("wardium_upgrade"))).formatted(Formatting.GRAY);
+    private static final Text WARDIUM_UPGRADE_APPLIES_TO_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.wardium_upgrade.applies_to"))).formatted(Formatting.BLUE);
+    private static final Text WARDIUM_UPGRADE_INGREDIENTS_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.wardium_upgrade.ingredients"))).formatted(Formatting.BLUE);
+    private static final Text WARDIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.wardium_upgrade.base_slot_description")));
+    private static final Text WARDIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.wardium_upgrade.additions_slot_description")));
 
-    private static final Identifier REINFORCED_EMPTY_SLOT_HELMET_TEXTURE = Identifier.of("item/empty_armor_slot_helmet");
-    private static final Identifier REINFORCED_EMPTY_SLOT_CHESTPLATE_TEXTURE = Identifier.of("item/empty_armor_slot_chestplate");
-    private static final Identifier REINFORCED_EMPTY_SLOT_LEGGINGS_TEXTURE = Identifier.of("item/empty_armor_slot_leggings");
-    private static final Identifier REINFORCED_EMPTY_SLOT_BOOTS_TEXTURE = Identifier.of("item/empty_armor_slot_boots");
-    private static final Identifier REINFORCED_EMPTY_SLOT_HOE_TEXTURE = Identifier.of("item/empty_slot_hoe");
-    private static final Identifier REINFORCED_EMPTY_SLOT_AXE_TEXTURE = Identifier.of("item/empty_slot_axe");
-    private static final Identifier REINFORCED_EMPTY_SLOT_SWORD_TEXTURE = Identifier.of("item/empty_slot_sword");
-    private static final Identifier REINFORCED_EMPTY_SLOT_SHOVEL_TEXTURE = Identifier.of("item/empty_slot_shovel");
-    private static final Identifier REINFORCED_EMPTY_SLOT_PICKAXE_TEXTURE = Identifier.of("item/empty_slot_pickaxe");
-    private static final Identifier REINFORCED_EMPTY_SLOT_INGOT_TEXTURE = Identifier.of("item/empty_slot_ingot");
+    private static final Identifier WARDIUM_EMPTY_SLOT_HELMET_TEXTURE = Identifier.of("item/empty_armor_slot_helmet");
+    private static final Identifier WARDIUM_EMPTY_SLOT_CHESTPLATE_TEXTURE = Identifier.of("item/empty_armor_slot_chestplate");
+    private static final Identifier WARDIUM_EMPTY_SLOT_LEGGINGS_TEXTURE = Identifier.of("item/empty_armor_slot_leggings");
+    private static final Identifier WARDIUM_EMPTY_SLOT_BOOTS_TEXTURE = Identifier.of("item/empty_armor_slot_boots");
+    private static final Identifier WARDIUM_EMPTY_SLOT_HOE_TEXTURE = Identifier.of("item/empty_slot_hoe");
+    private static final Identifier WARDIUM_EMPTY_SLOT_AXE_TEXTURE = Identifier.of("item/empty_slot_axe");
+    private static final Identifier WARDIUM_EMPTY_SLOT_SWORD_TEXTURE = Identifier.of("item/empty_slot_sword");
+    private static final Identifier WARDIUM_EMPTY_SLOT_SHOVEL_TEXTURE = Identifier.of("item/empty_slot_shovel");
+    private static final Identifier WARDIUM_EMPTY_SLOT_PICKAXE_TEXTURE = Identifier.of("item/empty_slot_pickaxe");
+    private static final Identifier WARDIUM_EMPTY_SLOT_INGOT_TEXTURE = Identifier.of("item/empty_slot_ingot");
 
-    private static final List<Identifier> REINFORCED_PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES = List.of(
-            REINFORCED_EMPTY_SLOT_HELMET_TEXTURE,
-            REINFORCED_EMPTY_SLOT_SWORD_TEXTURE,
-            REINFORCED_EMPTY_SLOT_CHESTPLATE_TEXTURE,
-            REINFORCED_EMPTY_SLOT_PICKAXE_TEXTURE,
-            REINFORCED_EMPTY_SLOT_LEGGINGS_TEXTURE,
-            REINFORCED_EMPTY_SLOT_AXE_TEXTURE,
-            REINFORCED_EMPTY_SLOT_BOOTS_TEXTURE,
-            REINFORCED_EMPTY_SLOT_HOE_TEXTURE,
-            REINFORCED_EMPTY_SLOT_SHOVEL_TEXTURE
+    private static final List<Identifier> WARDIUM_UPGRADE_BASE_SLOT_TEXTURES = List.of(
+            WARDIUM_EMPTY_SLOT_HELMET_TEXTURE,
+            WARDIUM_EMPTY_SLOT_SWORD_TEXTURE,
+            WARDIUM_EMPTY_SLOT_CHESTPLATE_TEXTURE,
+            WARDIUM_EMPTY_SLOT_PICKAXE_TEXTURE,
+            WARDIUM_EMPTY_SLOT_LEGGINGS_TEXTURE,
+            WARDIUM_EMPTY_SLOT_AXE_TEXTURE,
+            WARDIUM_EMPTY_SLOT_BOOTS_TEXTURE,
+            WARDIUM_EMPTY_SLOT_HOE_TEXTURE,
+            WARDIUM_EMPTY_SLOT_SHOVEL_TEXTURE
     );
-    private static final List<Identifier> REINFORCED_PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES = List.of(
-            REINFORCED_EMPTY_SLOT_INGOT_TEXTURE // Represents the Pearlanium Ingot slot
+    private static final List<Identifier> WARDIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES = List.of(
+            WARDIUM_EMPTY_SLOT_INGOT_TEXTURE // Represents the Pearlanium Ingot slot
     );
 
-    public static final Item REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE = register( "reinforced_pearlanium_upgrade_smithing_template",
+    public static final Item WARDIUM_UPGRADE_SMITHING_TEMPLATE = register( "wardium_upgrade_smithing_template",
             new SmithingTemplateItem(
-                    REINFORCED_PEARLANIUM_UPGRADE_APPLIES_TO_TEXT, // Text: "Applies to: ..."
-                    REINFORCED_PEARLANIUM_UPGRADE_INGREDIENTS_TEXT, // Text: "Ingredients: ..."
-                    REINFORCED_PEARLANIUM_UPGRADE_TEXT, // Text: "Reinforced Pearlanium Upgrade" (title)
-                    REINFORCED_PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, // Text for base slot hover
-                    REINFORCED_PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT, // Text for additions slot hover
-                    REINFORCED_PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES, // Icons for empty base slots
-                    REINFORCED_PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // Icons for empty addition slots
+                    WARDIUM_UPGRADE_APPLIES_TO_TEXT, // Text: "Applies to: ..."
+                    WARDIUM_UPGRADE_INGREDIENTS_TEXT, // Text: "Ingredients: ..."
+                    WARDIUM_UPGRADE_TEXT, // Text: "Wardium Upgrade" (title)
+                    WARDIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, // Text for base slot hover
+                    WARDIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT, // Text for additions slot hover
+                    WARDIUM_UPGRADE_BASE_SLOT_TEXTURES, // Icons for empty base slots
+                    WARDIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // Icons for empty addition slots
             ));
 
     // Items
@@ -137,26 +137,26 @@ import java.util.List;
     new HoeItem(PearlaniumModToolMaterials.PEARLANIUM, new Item.Settings()
     .attributeModifiers(HoeItem.createAttributeModifiers(PearlaniumModToolMaterials.PEARLANIUM, 0, -3.0F))));
 
-    // Reinforced Pearlanium Tools
-    public static final SwordItem REINFORCED_PEARLANIUM_SWORD = register("reinforced_pearlanium_sword",
-    new SwordItem(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, new Item.Settings()
-    .attributeModifiers(SwordItem.createAttributeModifiers(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, 3, -2.4f))));
+    // Wardium Tools
+    public static final SwordItem WARDIUM_SWORD = register("wardium_sword",
+    new SwordItem(PearlaniumModToolMaterials.WARDIUM, new Item.Settings()
+    .attributeModifiers(SwordItem.createAttributeModifiers(PearlaniumModToolMaterials.WARDIUM, 3, -2.4f))));
 
-    public static final PickaxeItem REINFORCED_PEARLANIUM_PICKAXE = register("reinforced_pearlanium_pickaxe",
-    new PickaxeItem(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, new Item.Settings()
-    .attributeModifiers(PickaxeItem.createAttributeModifiers(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, 1, -2.8F))));
+    public static final PickaxeItem WARDIUM_PICKAXE = register("wardium_pickaxe",
+    new PickaxeItem(PearlaniumModToolMaterials.WARDIUM, new Item.Settings()
+    .attributeModifiers(PickaxeItem.createAttributeModifiers(PearlaniumModToolMaterials.WARDIUM, 1, -2.8F))));
 
-    public static final AxeItem REINFORCED_PEARLANIUM_AXE = register("reinforced_pearlanium_axe",
-    new AxeItem(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, new Item.Settings()
-    .attributeModifiers(AxeItem.createAttributeModifiers(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, 5, -3.0F))));
+    public static final AxeItem WARDIUM_AXE = register("wardium_axe",
+    new AxeItem(PearlaniumModToolMaterials.WARDIUM, new Item.Settings()
+    .attributeModifiers(AxeItem.createAttributeModifiers(PearlaniumModToolMaterials.WARDIUM, 5, -3.0F))));
 
-    public static final ShovelItem REINFORCED_PEARLANIUM_SHOVEL = register("reinforced_pearlanium_shovel",
-    new ShovelItem(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, new Item.Settings()
-    .attributeModifiers(ShovelItem.createAttributeModifiers(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, 1.5F, -3.0F))));
+    public static final ShovelItem WARDIUM_SHOVEL = register("wardium_shovel",
+    new ShovelItem(PearlaniumModToolMaterials.WARDIUM, new Item.Settings()
+    .attributeModifiers(ShovelItem.createAttributeModifiers(PearlaniumModToolMaterials.WARDIUM, 1.5F, -3.0F))));
 
-    public static final HoeItem REINFORCED_PEARLANIUM_HOE = register("reinforced_pearlanium_hoe",
-    new HoeItem(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, new Item.Settings()
-    .attributeModifiers(HoeItem.createAttributeModifiers(PearlaniumModToolMaterials.REINFORCED_PEARLANIUM, 0, -3.0F))));
+    public static final HoeItem WARDIUM_HOE = register("wardium_hoe",
+    new HoeItem(PearlaniumModToolMaterials.WARDIUM, new Item.Settings()
+    .attributeModifiers(HoeItem.createAttributeModifiers(PearlaniumModToolMaterials.WARDIUM, 0, -3.0F))));
 
     // Pearlanium Armor
     public static final ArmorItem PEARLANIUM_HELMET = register("pearlanium_helmet",
@@ -175,21 +175,21 @@ import java.util.List;
     new ArmorItem(ModArmorMaterial.PEARLANIUM, ArmorItem.Type.BOOTS, new Item.Settings()
     .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(41))));
 
-    // Reinforced Pearlanium Armor
-    public static final ArmorItem REINFORCED_PEARLANIUM_HELMET = register("reinforced_pearlanium_helmet",
-    new ArmorItem(ModArmorMaterial.REINFORCED_PEARLANIUM, ArmorItem.Type.HELMET, new Item.Settings()
+    // Wardium Armor
+    public static final ArmorItem WARDIUM_HELMET = register("wardium_helmet",
+    new ArmorItem(ModArmorMaterial.WARDIUM, ArmorItem.Type.HELMET, new Item.Settings()
     .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(41))));
 
-    public static final ArmorItem REINFORCED_PEARLANIUM_CHESTPLATE = register("reinforced_pearlanium_chestplate",
-    new ArmorItem(ModArmorMaterial.REINFORCED_PEARLANIUM, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+    public static final ArmorItem WARDIUM_CHESTPLATE = register("wardium_chestplate",
+    new ArmorItem(ModArmorMaterial.WARDIUM, ArmorItem.Type.CHESTPLATE, new Item.Settings()
     .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(41))));
 
-    public static final ArmorItem REINFORCED_PEARLANIUM_LEGGINGS = register("reinforced_pearlanium_leggings",
-    new ArmorItem(ModArmorMaterial.REINFORCED_PEARLANIUM, ArmorItem.Type.LEGGINGS, new Item.Settings()
+    public static final ArmorItem WARDIUM_LEGGINGS = register("wardium_leggings",
+    new ArmorItem(ModArmorMaterial.WARDIUM, ArmorItem.Type.LEGGINGS, new Item.Settings()
     .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(41))));
 
-    public static final ArmorItem REINFORCED_PEARLANIUM_BOOTS = register("reinforced_pearlanium_boots",
-    new ArmorItem(ModArmorMaterial.REINFORCED_PEARLANIUM, ArmorItem.Type.BOOTS, new Item.Settings()
+    public static final ArmorItem WARDIUM_BOOTS = register("wardium_boots",
+    new ArmorItem(ModArmorMaterial.WARDIUM, ArmorItem.Type.BOOTS, new Item.Settings()
     .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(41))));
 
 

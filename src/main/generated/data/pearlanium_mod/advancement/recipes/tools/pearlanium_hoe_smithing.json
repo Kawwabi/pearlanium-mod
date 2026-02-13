@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pearlanium_hoe_smithing"
+        "recipe": "pearlanium_mod:pearlanium_hoe_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pearlanium_hoe_smithing"
+      "pearlanium_mod:pearlanium_hoe_smithing"
     ]
   }
 }

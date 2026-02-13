@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pearlanium_boots_smithing"
+        "recipe": "pearlanium_mod:pearlanium_boots_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -48,7 +48,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pearlanium_boots_smithing"
+      "pearlanium_mod:pearlanium_boots_smithing"
     ]
   }
 }

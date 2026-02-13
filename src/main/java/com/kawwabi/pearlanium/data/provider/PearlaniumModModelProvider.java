@@ -31,20 +31,20 @@ public class PearlaniumModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(moditems.PEARLANIUM_LEGGINGS, Models.GENERATED);
         itemModelGenerator.register(moditems.PEARLANIUM_BOOTS, Models.GENERATED);
         itemModelGenerator.register(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_HELMET, Models.GENERATED);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_CHESTPLATE, Models.GENERATED);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_LEGGINGS, Models.GENERATED);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_BOOTS, Models.GENERATED);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(moditems.WARDIUM_HELMET, Models.GENERATED);
+        itemModelGenerator.register(moditems.WARDIUM_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(moditems.WARDIUM_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(moditems.WARDIUM_BOOTS, Models.GENERATED);
+        itemModelGenerator.register(moditems.WARDIUM_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(moditems.PEARLANIUM_SWORD, Models.HANDHELD);
         itemModelGenerator.register(moditems.PEARLANIUM_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(moditems.PEARLANIUM_AXE, Models.HANDHELD);
         itemModelGenerator.register(moditems.PEARLANIUM_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(moditems.PEARLANIUM_HOE, Models.HANDHELD);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_AXE, Models.HANDHELD);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(moditems.REINFORCED_PEARLANIUM_HOE, Models.HANDHELD);
+        itemModelGenerator.register(moditems.WARDIUM_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(moditems.WARDIUM_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(moditems.WARDIUM_AXE, Models.HANDHELD);
+        itemModelGenerator.register(moditems.WARDIUM_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(moditems.WARDIUM_HOE, Models.HANDHELD);
     }
 }

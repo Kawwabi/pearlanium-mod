@@ -11,21 +11,11 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_pearlanium_shovel": {
+    "has_pearlanium_helmet": {
       "conditions": {
         "items": [
           {
-            "items": "pearlanium_mod:pearlanium_shovel"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_reinforced_pearlanium_upgrade_smithing_template": {
-      "conditions": {
-        "items": [
-          {
-            "items": "pearlanium_mod:reinforced_pearlanium_upgrade_smithing_template"
+            "items": "pearlanium_mod:pearlanium_helmet"
           }
         ]
       },
@@ -33,22 +23,32 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:reinforced_pearlanium_shovel_smithing"
+        "recipe": "pearlanium_mod:wardium_helmet_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wardium_upgrade_smithing_template": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pearlanium_mod:wardium_upgrade_smithing_template"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_pearlanium_shovel",
+      "has_pearlanium_helmet",
       "has_calibrated_echo_shard",
-      "has_reinforced_pearlanium_upgrade_smithing_template"
+      "has_wardium_upgrade_smithing_template"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:reinforced_pearlanium_shovel_smithing"
+      "pearlanium_mod:wardium_helmet_smithing"
     ]
   }
 }

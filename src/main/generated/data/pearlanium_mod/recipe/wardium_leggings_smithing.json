@@ -4,13 +4,13 @@
     "item": "pearlanium_mod:calibrated_echo_shard"
   },
   "base": {
-    "item": "pearlanium_mod:pearlanium_hoe"
+    "item": "pearlanium_mod:pearlanium_leggings"
   },
   "result": {
     "count": 1,
-    "id": "pearlanium_mod:reinforced_pearlanium_hoe"
+    "id": "pearlanium_mod:wardium_leggings"
   },
   "template": {
-    "item": "pearlanium_mod:reinforced_pearlanium_upgrade_smithing_template"
+    "item": "pearlanium_mod:wardium_upgrade_smithing_template"
   }
 }

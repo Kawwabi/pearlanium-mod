@@ -45,30 +45,30 @@ public class PearlaniumModItemTagProvider extends FabricTagProvider<Item> {
                 .add(moditems.PEARLANIUM_CHESTPLATE);
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
-                .add(moditems.REINFORCED_PEARLANIUM_SWORD);
+                .add(moditems.WARDIUM_SWORD);
 
         getOrCreateTagBuilder(ItemTags.PICKAXES)
-                .add(moditems.REINFORCED_PEARLANIUM_PICKAXE);
+                .add(moditems.WARDIUM_PICKAXE);
 
         getOrCreateTagBuilder(ItemTags.SHOVELS)
-                .add(moditems.REINFORCED_PEARLANIUM_SHOVEL);
+                .add(moditems.WARDIUM_SHOVEL);
 
         getOrCreateTagBuilder(ItemTags.AXES)
-                .add(moditems.REINFORCED_PEARLANIUM_AXE);
+                .add(moditems.WARDIUM_AXE);
 
         getOrCreateTagBuilder(ItemTags.HOES)
-                .add(moditems.REINFORCED_PEARLANIUM_HOE);
+                .add(moditems.WARDIUM_HOE);
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
-                .add(moditems.REINFORCED_PEARLANIUM_HELMET);
+                .add(moditems.WARDIUM_HELMET);
 
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
-                .add(moditems.REINFORCED_PEARLANIUM_CHESTPLATE);
+                .add(moditems.WARDIUM_CHESTPLATE);
 
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
-                .add(moditems.REINFORCED_PEARLANIUM_CHESTPLATE);
+                .add(moditems.WARDIUM_CHESTPLATE);
         
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
-                .add(moditems.REINFORCED_PEARLANIUM_CHESTPLATE);
+                .add(moditems.WARDIUM_CHESTPLATE);
     }
 }

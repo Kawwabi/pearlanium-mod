@@ -68,6 +68,12 @@ public class PearlaniumMod implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
 			entries.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE);
 		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE, moditems.WARDIUM_UPGRADE_SMITHING_TEMPLATE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.addAfter(Items.AMETHYST_SHARD, moditems.CALIBRATED_ECHO_SHARD);
+		});
 
 		// blocks
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
@@ -94,6 +100,29 @@ public class PearlaniumMod implements ModInitializer {
 			entries.addAfter(moditems.PEARLANIUM_AXE, moditems.PEARLANIUM_HOE);
 		});
 
+		// Add Wardium tools after Pearlanium tools
+		// In COMBAT group
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_SWORD, moditems.WARDIUM_SWORD);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_AXE, moditems.WARDIUM_AXE);
+		});
+
+		// In TOOLS group
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_HOE, moditems.WARDIUM_SHOVEL);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(moditems.WARDIUM_SHOVEL, moditems.WARDIUM_PICKAXE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(moditems.WARDIUM_PICKAXE, moditems.WARDIUM_AXE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
+			entries.addAfter(moditems.WARDIUM_AXE, moditems.WARDIUM_HOE);
+		});
+
 		// armor
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
 			entries.addAfter(Items.NETHERITE_BOOTS, moditems.PEARLANIUM_HELMET);
@@ -106,6 +135,20 @@ public class PearlaniumMod implements ModInitializer {
 		});
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
 			entries.addAfter(moditems.PEARLANIUM_LEGGINGS, moditems.PEARLANIUM_BOOTS);
+		});
+
+		// Add Wardium armor after Pearlanium armor
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.PEARLANIUM_BOOTS, moditems.WARDIUM_HELMET);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.WARDIUM_HELMET, moditems.WARDIUM_CHESTPLATE);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.WARDIUM_CHESTPLATE, moditems.WARDIUM_LEGGINGS);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
+			entries.addAfter(moditems.WARDIUM_LEGGINGS, moditems.WARDIUM_BOOTS);
 		});
 
 

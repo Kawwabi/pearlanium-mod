@@ -17,7 +17,7 @@ public class PearlaniumModLootTableModifiers {
                 LootPool.Builder poolBuilder = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1))
                 .conditionally(RandomChanceLootCondition.builder(0.25f))
-                .with(ItemEntry.builder(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE));
+                .with(ItemEntry.builder(moditems.WARDIUM_UPGRADE_SMITHING_TEMPLATE));
                 tableBuilder.pool(poolBuilder);
             }
         });

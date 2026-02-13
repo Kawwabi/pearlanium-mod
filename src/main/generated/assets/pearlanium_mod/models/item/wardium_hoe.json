@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "pearlanium_mod:item/reinforced_pearlanium_hoe"
+    "layer0": "pearlanium_mod:item/wardium_hoe"
   }
 }

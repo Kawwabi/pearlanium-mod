@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "pearlanium_mod:reinforced_pearlanium_upgrade_smithing_template"
+            "items": "pearlanium_mod:wardium_upgrade_smithing_template"
           }
         ]
       },
@@ -19,7 +19,7 @@
     "frame": "challenge",
     "icon": {
       "count": 1,
-      "id": "pearlanium_mod:reinforced_pearlanium_upgrade_smithing_template"
+      "id": "pearlanium_mod:wardium_upgrade_smithing_template"
     },
     "title": {
       "translate": "advancement.pearlanium.wardens_heart.title"

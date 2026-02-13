@@ -9,11 +9,11 @@
     "item.pearlanium_mod.pearlanium_shovel": "Pearlanium Shovel",
     "item.pearlanium_mod.pearlanium_hoe": "Pearlanium Hoe",
 
-    "item.pearlanium_mod.reinforced_pearlanium_sword": "Reinforced Pearlanium Sword",
-    "item.pearlanium_mod.reinforced_pearlanium_axe": "Reinforced Pearlanium Axe",
-    "item.pearlanium_mod.reinforced_pearlanium_pickaxe": "Reinforced Pearlanium Pickaxe",
-    "item.pearlanium_mod.reinforced_pearlanium_shovel": "Reinforced Pearlanium Shovel",
-    "item.pearlanium_mod.reinforced_pearlanium_hoe": "Reinforced Pearlanium Hoe",
+    "item.pearlanium_mod.wardium_sword": "Wardium Sword",
+    "item.pearlanium_mod.wardium_axe": "Wardium Axe",
+    "item.pearlanium_mod.wardium_pickaxe": "Wardium Pickaxe",
+    "item.pearlanium_mod.wardium_shovel": "Wardium Shovel",
+    "item.pearlanium_mod.wardium_hoe": "Wardium Hoe",
 
     "item.pearlanium_mod.pearlanium_helmet": "Pearlanium Helmet",
     "item.pearlanium_mod.pearlanium_chestplate": "Pearlanium Chestplate",
@@ -21,11 +21,11 @@
     "item.pearlanium_mod.pearlanium_boots": "Pearlanium Boots",
     "item.pearlanium_mod.pearlanium_upgrade_smithing_template": "Smithing Template",
 
-    "item.pearlanium_mod.reinforced_pearlanium_helmet": "Reinforced Pearlanium Helmet",
-    "item.pearlanium_mod.reinforced_pearlanium_chestplate": "Reinforced Pearlanium Chestplate",
-    "item.pearlanium_mod.reinforced_pearlanium_leggings": "Reinforced Pearlanium Leggings",
-    "item.pearlanium_mod.reinforced_pearlanium_boots": "Reinforced Pearlanium Boots",
-    "item.pearlanium_mod.reinforced_pearlanium_upgrade_smithing_template": "Smithing Template",
+    "item.pearlanium_mod.wardium_helmet": "Wardium Helmet",
+    "item.pearlanium_mod.wardium_chestplate": "Wardium Chestplate",
+    "item.pearlanium_mod.wardium_leggings": "Wardium Leggings",
+    "item.pearlanium_mod.wardium_boots": "Wardium Boots",
+    "item.pearlanium_mod.wardium_upgrade_smithing_template": "Smithing Template",
 
     "upgrade.pearlanium_mod.pearlanium_upgrade": "Pearlanium Upgrade",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.applies_to": "Netherite Equipment",
@@ -33,11 +33,11 @@
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.base_slot_description": "Add netherite armor, weapon or tool",
     "item.pearlanium_mod.smithing_template.pearlanium_upgrade.additions_slot_description": "Add Pearlanium Ingot",
 
-    "upgrade.pearlanium_mod.reinforced_pearlanium_upgrade": "Reinforced Upgrade",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.applies_to": "Pearlanium Equipment",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.ingredients": "Calibrated Echo Shard",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.base_slot_description": "Add pearlanium armor, weapon or tool",
-    "item.pearlanium_mod.smithing_template.reinforced_pearlanium_upgrade.additions_slot_description": "Add Calibrated Echo Shard",
+    "upgrade.pearlanium_mod.wardium_upgrade": "Wardium Upgrade",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.applies_to": "Pearlanium Equipment",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.ingredients": "Calibrated Echo Shard",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.base_slot_description": "Add pearlanium armor, weapon or tool",
+    "item.pearlanium_mod.smithing_template.wardium_upgrade.additions_slot_description": "Add Calibrated Echo Shard",
 
     "block.pearlanium_mod.pearled_ore": "Pearled Ore",
     "block.pearlanium_mod.pearlanium_block": "Pearlanium Block",
@@ -49,6 +49,6 @@
     "advancement.pearlanium.full_armor.description": "Obtain a full set of Pearlanium armor",
     "advancement.pearlanium.wardens_heart.title": "The warden's heart",
     "advancement.pearlanium.wardens_heart.description": "Kill the warden and obtain it's heart... It might be useful for something",
-    "advancement.pearlanium.reinforced_full_armor.title": "Continuing the legacy",
-    "advancement.pearlanium.reinforced_full_armor.description": "Obtain a full set of Reinforced Pearlanium armor"
+    "advancement.pearlanium.wardium_full_armor.title": "Continuing the legacy",
+    "advancement.pearlanium.wardium_full_armor.description": "Obtain a full set of Wardium armor"
 }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pearlanium_ingot_from_brute_and_emerald"
+        "recipe": "pearlanium_mod:pearlanium_ingot_from_brute_and_emerald"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pearlanium_ingot_from_brute_and_emerald"
+      "pearlanium_mod:pearlanium_ingot_from_brute_and_emerald"
     ]
   }
 }

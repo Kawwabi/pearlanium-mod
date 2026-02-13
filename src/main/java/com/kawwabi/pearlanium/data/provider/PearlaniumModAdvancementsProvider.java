@@ -40,7 +40,7 @@ public class PearlaniumModAdvancementsProvider extends FabricAdvancementProvider
 
     AdvancementEntry wardens_heartAdvancement = Advancement.Builder.create().parent(brute_pearlaniumAdvancement)
             .display(
-                    moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE,
+                    moditems.WARDIUM_UPGRADE_SMITHING_TEMPLATE,
                     Text.translatable("advancement.pearlanium.wardens_heart.title"),
                     Text.translatable("advancement.pearlanium.wardens_heart.description"),
                     null,
@@ -49,7 +49,7 @@ public class PearlaniumModAdvancementsProvider extends FabricAdvancementProvider
                     true,
                     false
             )
-            .criterion("got_warden_heart_item", InventoryChangedCriterion.Conditions.items(moditems.REINFORCED_PEARLANIUM_UPGRADE_SMITHING_TEMPLATE))
+            .criterion("got_warden_heart_item", InventoryChangedCriterion.Conditions.items(moditems.WARDIUM_UPGRADE_SMITHING_TEMPLATE))
             .build(consumer, "pearlanium:wardens_heart");
 
     AdvancementEntry fullArmorAdvancement = Advancement.Builder.create().parent(brute_pearlaniumAdvancement)
@@ -81,27 +81,27 @@ public class PearlaniumModAdvancementsProvider extends FabricAdvancementProvider
 
     AdvancementEntry fullReinforcedArmorAdvancement = Advancement.Builder.create().parent(fullArmorAdvancement)
             .display(
-                    moditems.REINFORCED_PEARLANIUM_CHESTPLATE,
-                    Text.translatable("advancement.pearlanium.reinforced_full_armor.title"),
-                    Text.translatable("advancement.pearlanium.reinforced_full_armor.description"),
+                    moditems.WARDIUM_CHESTPLATE,
+                    Text.translatable("advancement.pearlanium.wardium_full_armor.title"),
+                    Text.translatable("advancement.pearlanium.wardium_full_armor.description"),
                     null, // null background uses the parent's tab background
                     AdvancementFrame.CHALLENGE, // Or TASK/GOAL
                     true, // Show toast
                     true, // Announce to chat
                     false // Hidden until prerequisites are met
             )
-            .criterion("has_reinforced_pearlanium_helmet", InventoryChangedCriterion.Conditions.items(
-                    ItemPredicate.Builder.create().items(moditems.REINFORCED_PEARLANIUM_HELMET).build()
+            .criterion("has_wardium_helmet", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_HELMET).build()
             ))
-            .criterion("has_reinforced_pearlanium_chestplate", InventoryChangedCriterion.Conditions.items(
-                    ItemPredicate.Builder.create().items(moditems.REINFORCED_PEARLANIUM_CHESTPLATE).build()
+            .criterion("has_wardium_chestplate", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_CHESTPLATE).build()
             ))
-            .criterion("has_reinforced_pearlanium_leggings", InventoryChangedCriterion.Conditions.items(
-                    ItemPredicate.Builder.create().items(moditems.REINFORCED_PEARLANIUM_LEGGINGS).build()
+            .criterion("has_wardium_leggings", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_LEGGINGS).build()
             ))
-            .criterion("has_reinforced_pearlanium_boots", InventoryChangedCriterion.Conditions.items(
-                    ItemPredicate.Builder.create().items(moditems.REINFORCED_PEARLANIUM_BOOTS).build()
+            .criterion("has_wardium_boots", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_BOOTS).build()
             ))
-            .build(consumer, "pearlanium:full_reinforced_pearlanium_armor");    
+            .build(consumer, "pearlanium:full_wardium_armor");
     }
 }
