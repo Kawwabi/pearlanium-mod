@@ -1,0 +1,50 @@
+{
+  "parent": "pearlanium:full_wardium_armor",
+  "criteria": {
+    "soundproof": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "head": {
+                  "items": "pearlanium_mod:wardium_helmet"
+                },
+                "chest": {
+                  "items": "pearlanium_mod:wardium_chestplate"
+                },
+                "legs": {
+                  "items": "pearlanium_mod:wardium_leggings"
+                },
+                "feet": {
+                  "items": "pearlanium_mod:wardium_boots"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:avoid_vibration"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.pearlanium.soundproof.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "pearlanium_mod:wardium_boots"
+    },
+    "title": {
+      "translate": "advancement.pearlanium.soundproof.title"
+    }
+  },
+  "requirements": [
+    [
+      "soundproof"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -117,5 +117,31 @@ public class PearlaniumModAdvancementsProvider extends FabricAdvancementProvider
             )
             .criterion("has_wardium_hoe", InventoryChangedCriterion.Conditions.items(moditems.WARDIUM_HOE))
             .build(consumer, "pearlanium:psychotic_dedication");
+
+        // Soundproof achievement - requires full Wardium armor and avoiding vibrations (silent near sculk sensor)
+        AdvancementEntry soundproofAdvancement = Advancement.Builder.create().parent(fullReinforcedArmorAdvancement)
+            .display(
+                    moditems.WARDIUM_BOOTS,
+                    Text.translatable("advancement.pearlanium.soundproof.title"),
+                    Text.translatable("advancement.pearlanium.soundproof.description"),
+                    null,
+                    AdvancementFrame.GOAL,
+                    true,
+                    true,
+                    false
+            )
+            .criterion("has_wardium_helmet", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_HELMET).build()
+            ))
+            .criterion("has_wardium_chestplate", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_CHESTPLATE).build()
+            ))
+            .criterion("has_wardium_leggings", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_LEGGINGS).build()
+            ))
+            .criterion("has_wardium_boots", InventoryChangedCriterion.Conditions.items(
+                    ItemPredicate.Builder.create().items(moditems.WARDIUM_BOOTS).build()
+            ))
+            .build(consumer, "pearlanium:soundproof");
     }
 }
