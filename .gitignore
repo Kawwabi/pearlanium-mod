@@ -8,6 +8,7 @@ classes/
 # eclipse
 
 *.launch
+.settings/
 
 # idea
 
@@ -31,6 +32,8 @@ bin/
 # fabric
 
 run/
+.fabric/
+src/main/generated/
 
 # java
 
@@ -38,3 +41,7 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
+
+# additional
+
+*.jar

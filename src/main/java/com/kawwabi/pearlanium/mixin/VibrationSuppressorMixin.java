@@ -110,6 +110,7 @@ public abstract class VibrationSuppressorMixin {
     /**
      * Check if any player wearing full Wardium armor is within the suppression radius
      */
+    @SuppressWarnings("resource") // 'world' is just a typed reference to 'this', not an actual closeable resource
     @Unique
     private boolean isNearArmoredPlayer(Vec3d pos) {
         ServerWorld world = (ServerWorld) (Object) this;
