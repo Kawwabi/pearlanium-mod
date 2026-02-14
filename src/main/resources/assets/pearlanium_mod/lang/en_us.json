@@ -54,5 +54,7 @@
     "advancement.pearlanium.soundproof.title": "Soundproof",
     "advancement.pearlanium.soundproof.description": "Use the Wardium armor to keep you silent around a Sculk Sensor or Warden",
     "advancement.pearlanium.psychotic_dedication.title": "Psychotic Dedication",
-    "advancement.pearlanium.psychotic_dedication.description": "Use the Warden's heart to upgrade a Hoe, and then reevaluate your mental health"
+    "advancement.pearlanium.psychotic_dedication.description": "Use the Warden's heart to upgrade a Hoe, and then reevaluate your mental health",
+    "advancement.pearlanium.no_you_wont.title": "No you won't",
+    "advancement.pearlanium.no_you_wont.description": "Disrupt an enderman's teleport by wearing a pearlanium-based armor"
 }

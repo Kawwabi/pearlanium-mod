@@ -54,5 +54,7 @@
     "advancement.pearlanium.soundproof.title": "Insonorizado",
     "advancement.pearlanium.soundproof.description": "Use a armadura de Defensório para ficar em silêncio perto de um Sensor de Sculk ou Defensor",
     "advancement.pearlanium.psychotic_dedication.title": "Dedicação Psicótica",
-    "advancement.pearlanium.psychotic_dedication.description": "Use o coração do Defensor para melhorar uma Enxada de Perolânio, e depois reavalie sua saúde mental"
+    "advancement.pearlanium.psychotic_dedication.description": "Use o coração do Defensor para melhorar uma Enxada de Perolânio, e depois reavalie sua saúde mental",
+    "advancement.pearlanium.no_you_wont.title": "Não vai não",
+    "advancement.pearlanium.no_you_wont.description": "Interrompa o teleporte de um Enderman usando uma armadura baseada em Perolânio"
 }

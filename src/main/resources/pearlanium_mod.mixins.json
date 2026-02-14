@@ -5,7 +5,8 @@
 	"mixins": [
 		"ExampleMixin",
 		"WardiumArmorMixin",
-		"VibrationSuppressorMixin"
+		"VibrationSuppressorMixin",
+		"EndermanTeleportMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,0 +1,26 @@
+{
+  "parent": "pearlanium:full_pearlanium_armor",
+  "criteria": {
+    "no_you_wont": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.pearlanium.no_you_wont.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:ender_eye"
+    },
+    "title": {
+      "translate": "advancement.pearlanium.no_you_wont.title"
+    }
+  },
+  "requirements": [
+    [
+      "no_you_wont"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
