@@ -47,8 +47,12 @@
     "advancement.pearlanium.root.description": "Obtenha seu primeiro Perolânio Bruto",
     "advancement.pearlanium.full_armor.title": "Assim como os ancestrais pretendiam",
     "advancement.pearlanium.full_armor.description": "Obtenha uma armadura completa de Perolânio",
-    "advancement.pearlanium.wardens_heart.title": "O coração do defensor",
-    "advancement.pearlanium.wardens_heart.description": "Mate o defensor e obtenha seu coração... Pode ser útil para algo",
+    "advancement.pearlanium.wardens_heart.title": "O coração do Defensor",
+    "advancement.pearlanium.wardens_heart.description": "Mate o Defensor e obtenha seu coração... Pode ser útil para algo",
     "advancement.pearlanium.wardium_full_armor.title": "Continuando o legado",
-    "advancement.pearlanium.wardium_full_armor.description": "Obtenha uma armadura completa de Defensório"
+    "advancement.pearlanium.wardium_full_armor.description": "Obtenha uma armadura completa de Defensório",
+    "advancement.pearlanium.soundproof.title": "Insonorizado",
+    "advancement.pearlanium.soundproof.description": "Use a armadura de Defensório para ficar em silêncio perto de um Sensor de Sculk ou Defensor",
+    "advancement.pearlanium.psychotic_dedication.title": "Dedicação Psicótica",
+    "advancement.pearlanium.psychotic_dedication.description": "Use o coração do Defensor para melhorar uma Enxada de Perolânio, e depois reavalie sua saúde mental"
 }

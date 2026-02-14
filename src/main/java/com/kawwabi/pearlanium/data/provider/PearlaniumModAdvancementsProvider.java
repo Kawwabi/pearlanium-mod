@@ -103,5 +103,19 @@ public class PearlaniumModAdvancementsProvider extends FabricAdvancementProvider
                     ItemPredicate.Builder.create().items(moditems.WARDIUM_BOOTS).build()
             ))
             .build(consumer, "pearlanium:full_wardium_armor");
+
+        AdvancementEntry psychoticDedicationAdvancement = Advancement.Builder.create().parent(brute_pearlaniumAdvancement)
+            .display(
+                    moditems.WARDIUM_HOE,
+                    Text.translatable("advancement.pearlanium.psychotic_dedication.title"),
+                    Text.translatable("advancement.pearlanium.psychotic_dedication.description"),
+                    null,
+                    AdvancementFrame.CHALLENGE,
+                    true,
+                    true,
+                    false
+            )
+            .criterion("has_wardium_hoe", InventoryChangedCriterion.Conditions.items(moditems.WARDIUM_HOE))
+            .build(consumer, "pearlanium:psychotic_dedication");
     }
 }

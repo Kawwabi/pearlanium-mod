@@ -47,8 +47,12 @@
     "advancement.pearlanium.root.description": "Obtain your first Brute Pearlanium",
     "advancement.pearlanium.full_armor.title": "Just like the ancestors intended",
     "advancement.pearlanium.full_armor.description": "Obtain a full set of Pearlanium armor",
-    "advancement.pearlanium.wardens_heart.title": "The warden's heart",
+    "advancement.pearlanium.wardens_heart.title": "The Warden's heart",
     "advancement.pearlanium.wardens_heart.description": "Kill the warden and obtain it's heart... It might be useful for something",
     "advancement.pearlanium.wardium_full_armor.title": "Continuing the legacy",
-    "advancement.pearlanium.wardium_full_armor.description": "Obtain a full set of Wardium armor"
+    "advancement.pearlanium.wardium_full_armor.description": "Obtain a full set of Wardium armor",
+    "advancement.pearlanium.soundproof.title": "Soundproof",
+    "advancement.pearlanium.soundproof.description": "Use the Wardium armor to keep you silent around a Sculk Sensor or Warden",
+    "advancement.pearlanium.psychotic_dedication.title": "Psychotic Dedication",
+    "advancement.pearlanium.psychotic_dedication.description": "Use the Warden's heart to upgrade a Hoe, and then reevaluate your mental health"
 }

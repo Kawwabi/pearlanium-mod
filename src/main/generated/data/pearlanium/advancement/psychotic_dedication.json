@@ -1,0 +1,34 @@
+{
+  "parent": "pearlanium:root",
+  "criteria": {
+    "has_wardium_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pearlanium_mod:wardium_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.pearlanium.psychotic_dedication.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "pearlanium_mod:wardium_hoe"
+    },
+    "title": {
+      "translate": "advancement.pearlanium.psychotic_dedication.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_wardium_hoe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
