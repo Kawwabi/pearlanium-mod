@@ -13,19 +13,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * Mixin to prevent players wearing full wardium armor from triggering skulk sensors.
- * When wearing the full set, the player becomes "silent" to vibrations.
+ * The bypassesSteppingEffects is kept to skip the regular stepping animation/footstep logic
+ * while the VibrationSuppressorMixin handles suppressing the actual vibration events.
+ * 
+ * Note: We no longer override isSilent() as it was breaking other sounds like armor equip sounds.
+ * The skulk sensor suppression is handled entirely by VibrationSuppressorMixin now.
  */
 @Mixin(value = Entity.class, priority = 2048)
 public abstract class WardiumArmorMixin {
 
-    @Inject(at = @At("HEAD"), method = "isSilent", cancellable = true)
-    public void isSilent(CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
-        if (isWearingFullWardiumArmorSet()) {
-            callbackInfoReturnable.setReturnValue(true);
-            callbackInfoReturnable.cancel();
-        }
-    }
-
+    /**
+     * This makes the player bypass regular stepping effects - this is what makes
+     * Wardium armor "quiet" when walking. It doesn't affect audio, just the 
+     * stepping animation/particle effects.
+     */
     @Inject(at = @At("HEAD"), method = "bypassesSteppingEffects", cancellable = true)
     public void bypassesSteppingEffects(CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
         if (isWearingFullWardiumArmorSet()) {

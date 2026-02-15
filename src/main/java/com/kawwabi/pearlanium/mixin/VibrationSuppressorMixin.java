@@ -24,18 +24,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * these events register as "silent" to nearby sensors.
  * 
  * Suppression logic:
- * 1. When player IS THE SOURCE and event is movement-related (step, sneak) → ALLOW (for advancement)
- * 2. When player IS THE SOURCE and event is block-related (place, break, hit) → SUPPRESS
- * 3. When events occur near armored player (within 5 blocks) → SUPPRESS
+ * 1. Only suppress when the SOURCE entity is a player wearing full Wardium armor
+ * 2. Movement events (step, sneak) → ALLOW (for advancement)
+ * 3. Other events → SUPPRESS
  */
 @Mixin(ServerWorld.class)
 public abstract class VibrationSuppressorMixin {
-
-    /**
-     * Radius in blocks for suppressing nearby vibrations
-     */
-    @Unique
-    private static final double SUPPRESSION_RADIUS = 5.0;
 
     /**
      * Movement-related game events that should pass through (for advancement)
@@ -44,17 +38,6 @@ public abstract class VibrationSuppressorMixin {
     private static final java.util.Set<String> MOVEMENT_EVENTS = java.util.Set.of(
         "step",
         "sneak"
-    );
-
-    /**
-     * Block interaction events that should be suppressed even when player is source
-     */
-    @Unique
-    private static final java.util.Set<String> BLOCK_EVENTS = java.util.Set.of(
-        "block_place",
-        "block_break",
-        "hit_attack",
-        "hit_damage"
     );
 
     /**
@@ -70,12 +53,21 @@ public abstract class VibrationSuppressorMixin {
 
     /**
      * Check if the game event should be suppressed.
+     * Only suppress when the source entity is a player wearing full Wardium armor.
      */
     @Unique
+    @SuppressWarnings("resource") // ServerWorld is not closeable - false positive from Java language server
     private boolean shouldSuppressVibration(RegistryEntry<GameEvent> event, Vec3d emitterPos, GameEvent.Emitter emitter) {
+        // Only suppress if the world is fully loaded and ready
+        // Check that the world has started (time > 0 indicates initial loading is complete)
+        ServerWorld thisWorld = (ServerWorld)(Object)this;
+        if (thisWorld.getTime() <= 0) {
+            return false;
+        }
+        
         Entity sourceEntity = emitter.sourceEntity();
         
-        // Check if source entity is an armored player
+        // Only suppress when the SOURCE entity is an armored player
         if (sourceEntity instanceof PlayerEntity sourcePlayer) {
             if (isWearingFullWardiumArmorSet(sourcePlayer)) {
                 // Allow movement events (step, sneak) to pass through for advancement
@@ -83,13 +75,13 @@ public abstract class VibrationSuppressorMixin {
                 if (isMovementEvent(event)) {
                     return false; // Don't suppress - let it through
                 }
-                // Suppress block interaction events
+                // Suppress all other events when player is wearing full Wardium
                 return true;
             }
         }
         
-        // Check if event is near an armored player (radius suppression)
-        return isNearArmoredPlayer(emitterPos);
+        // Don't suppress anything else - no radius-based suppression
+        return false;
     }
 
     /**
@@ -102,25 +94,6 @@ public abstract class VibrationSuppressorMixin {
         for (String movement : MOVEMENT_EVENTS) {
             if (eventName.contains(movement)) {
                 return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Check if any player wearing full Wardium armor is within the suppression radius
-     */
-    @SuppressWarnings("resource") // 'world' is just a typed reference to 'this', not an actual closeable resource
-    @Unique
-    private boolean isNearArmoredPlayer(Vec3d pos) {
-        ServerWorld world = (ServerWorld) (Object) this;
-        
-        for (PlayerEntity player : world.getPlayers()) {
-            if (isWearingFullWardiumArmorSet(player)) {
-                double distance = player.getPos().distanceTo(pos);
-                if (distance <= SUPPRESSION_RADIUS) {
-                    return true;
-                }
             }
         }
         return false;
