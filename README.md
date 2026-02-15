@@ -1,8 +1,13 @@
-﻿# <img src="src/main/resources/assets/pearlanium_mod/icon.png" width="128"> Pearlanium Mod
-
-![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.1-62B47E?style=flat)
-![Fabric](https://img.shields.io/badge/Loader-Fabric-1DB4BC?style=flat)
-![License](https://img.shields.io/badge/License-GPLv3/ARR-FF6B6B?style=flat)
+﻿<p align="center">
+  <img src="src/main/resources/assets/pearlanium_mod/icon_pearlanium-mod_512x.png" width="128">
+  <h1 align="center">Pearlanium Mod</h1>
+  
+  ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.1-62B47E?style=flat)
+  ![Fabric](https://img.shields.io/badge/Loader-Fabric-1DB4BC?style=flat)
+  ![Quilt](https://img.shields.io/badge/Loader-Quilt-73C6B6?style=flat)
+  ![NeoForge](https://img.shields.io/badge/NeoForge-Via_Sinytra-FF6B6B?style=flat)
+  ![License](https://img.shields.io/badge/License-GPLv3/ARR-FF6B6B?style=flat)
+</p>
 
 
 Pearlanium Mod introduces two new material tiers that extend Minecraft's progression system in a way that feels natural to the vanilla experience. The mod adds Pearlanium (a superior Netherite variant) and Wardium (an advanced alloy tier), along with new tools, armor, blocks, and ore generation.
@@ -40,17 +45,33 @@ Creating a tool or armor made out of Wardium is to honor your ancestors, finally
 ### Requirements
 
 - **Minecraft**: Version 1.21.1
-- **Fabric Loader**: 0.16.10 or higher
 - **Java**: Version 21
+
+#### Fabric / Quilt
+- **Fabric Loader**: 0.16.10 or higher
+- **Quilt Loader**: 0.30.0-beta.0 or higher
 - **Fabric API**: Required for mod functionality
+
+#### NeoForge (Via Sinytra Connector)
+- **Sinytra Connector**: 2.0.0
+- **Forgified Fabric API**: 0.116.7+1.21.1
 
 ### Steps
 
-1. Install [Fabric Loader](https://fabricmc.net/) for Minecraft 1.21.1
+#### Fabric / Quilt
+1. Install [Fabric Loader](https://fabricmc.net/) or [Quilt Loader](https://quiltmc.org/) for Minecraft 1.21.1
 2. Download and install [Fabric API](https://modrinth.com/mod/fabric-api)
 3. Download the latest **Pearlanium Mod** release from [Modrinth](https://modrinth.com/mod/pearlanium-mod) or [CurseForge](https://www.curseforge.com/minecraft/mods/pearlanium-mod)
 4. Place the mod JAR file in your `mods` folder
-5. Launch the game with Fabric profile
+5. Launch the game with Fabric/Quilt profile
+
+#### NeoForge
+1. Install [NeoForge](https://neoforged.net/) for Minecraft 1.21.1
+2. Download and install [Sinytra Connector](https://modrinth.com/mod/sinytra-connector)
+3. Download and install [Forgified Fabric API](https://modrinth.com/mod/forgified-fabric-api)
+4. Download the latest **Pearlanium Mod** release
+5. Place the mod JAR file in your `mods` folder
+6. Launch the game with NeoForge profile
 
 ---
 
