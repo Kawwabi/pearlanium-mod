@@ -1,12 +1,14 @@
-﻿<p align="center">
+<p align="center">
   <img src="src/main/resources/assets/pearlanium_mod/icon_pearlanium-mod_512x.png" width="128">
-  <h1 align="center">Pearlanium Mod</h1>
+  <h1 align="center">Pearlanium Mod</h1><br>
   
-  ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.1-62B47E?style=flat)<br>
-  ![Fabric](https://img.shields.io/badge/Loader-Fabric-1DB4BC?style=flat)<br>
-  ![Quilt](https://img.shields.io/badge/Loader-Quilt-73C6B6?style=flat)<br>
-  ![NeoForge](https://img.shields.io/badge/NeoForge-Via_Sinytra-FF6B6B?style=flat)<br>
-  ![License](https://img.shields.io/badge/License-GPLv3/ARR-FF6B6B?style=flat)
+  <div style="display: flex; justify-content: center; gap: 8px;">
+    <img alt="Minecraft Version" src="https://img.shields.io/badge/Minecraft-1.21.1-62B47E?style=flat" />
+    <img alt="Fabric" src="https://img.shields.io/badge/Loader-Fabric-1DB4BC?style=flat" />
+    <img alt="Quilt" src="https://img.shields.io/badge/Loader-Quilt-73C6B6?style=flat" />
+    <img alt="NeoForge" src="https://img.shields.io/badge/NeoForge-Via_Sinytra-FF6B6B?style=flat" />
+    <img alt="License" src="https://img.shields.io/badge/License-GPLv3/ARR-FF6B6B?style=flat" />
+  </div>
 </p>
 
 <p align="center">
