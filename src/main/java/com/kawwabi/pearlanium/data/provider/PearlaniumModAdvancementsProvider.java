@@ -117,5 +117,8 @@ public class PearlaniumModAdvancementsProvider extends FabricAdvancementProvider
             )
             .criterion("has_wardium_hoe", InventoryChangedCriterion.Conditions.items(moditems.WARDIUM_HOE))
             .build(consumer, "pearlanium:psychotic_dedication");
+
+        // Note: The "yes_today_im_sorry" achievement is defined as a JSON file
+        // because ImpossibleCriterion requires manual JSON definition in Fabric
     }
 }

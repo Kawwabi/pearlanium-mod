@@ -1,0 +1,28 @@
+{
+  "parent": "pearlanium:root",
+  "criteria": {
+    "arrow_bounced_back": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.pearlanium.yes_today_im_sorry.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:arrow"
+    },
+    "title": {
+      "translate": "advancement.pearlanium.yes_today_im_sorry.title"
+    },
+    "frame": "challenge",
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "arrow_bounced_back"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

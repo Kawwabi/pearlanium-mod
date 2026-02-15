@@ -3,10 +3,10 @@
 	"package": "com.kawwabi.pearlanium.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin",
 		"WardiumArmorMixin",
 		"VibrationSuppressorMixin",
-		"EndermanTeleportMixin"
+		"EndermanTeleportMixin",
+		"ArrowBounceMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

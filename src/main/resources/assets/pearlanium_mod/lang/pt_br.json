@@ -56,5 +56,7 @@
     "advancement.pearlanium.psychotic_dedication.title": "Dedicação Psicótica",
     "advancement.pearlanium.psychotic_dedication.description": "Use o coração do Defensor para melhorar uma Enxada de Perolânio, e depois reavalie sua saúde mental",
     "advancement.pearlanium.no_you_wont.title": "Não vai não",
-    "advancement.pearlanium.no_you_wont.description": "Interrompa o teleporte de um Enderman usando uma armadura baseada em Perolânio"
+    "advancement.pearlanium.no_you_wont.description": "Interrompa o teleporte de um Enderman usando uma armadura baseada em Perolânio",
+    "advancement.pearlanium.yes_today_im_sorry.title": "Hoje sim, desculpa",
+    "advancement.pearlanium.yes_today_im_sorry.description": "Seja acertado por uma flecha que você mesmo atirou num Enderman depois dele rebatê-la"
 }
