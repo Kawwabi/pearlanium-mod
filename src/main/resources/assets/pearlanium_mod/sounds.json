@@ -1,0 +1,17 @@
+{
+  "item_armor_equip_pearlanium": {
+    "sounds": [
+      "pearlanium_mod:equip_pearlanium1",
+      "pearlanium_mod:equip_pearlanium2",
+      "pearlanium_mod:equip_pearlanium3"
+    ]
+  },
+  "item_armor_equip_wardium": {
+    "sounds": [
+      "pearlanium_mod:equip_wardium1",
+      "pearlanium_mod:equip_wardium2",
+      "pearlanium_mod:equip_wardium3",
+      "pearlanium_mod:equip_wardium4"
+    ]
+  }
+}
