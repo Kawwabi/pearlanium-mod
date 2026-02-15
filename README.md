@@ -2,13 +2,16 @@
   <img src="src/main/resources/assets/pearlanium_mod/icon_pearlanium-mod_512x.png" width="128">
   <h1 align="center">Pearlanium Mod</h1>
   
-  ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.1-62B47E?style=flat)
-  ![Fabric](https://img.shields.io/badge/Loader-Fabric-1DB4BC?style=flat)
-  ![Quilt](https://img.shields.io/badge/Loader-Quilt-73C6B6?style=flat)
-  ![NeoForge](https://img.shields.io/badge/NeoForge-Via_Sinytra-FF6B6B?style=flat)
+  ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21.1-62B47E?style=flat)<br>
+  ![Fabric](https://img.shields.io/badge/Loader-Fabric-1DB4BC?style=flat)<br>
+  ![Quilt](https://img.shields.io/badge/Loader-Quilt-73C6B6?style=flat)<br>
+  ![NeoForge](https://img.shields.io/badge/NeoForge-Via_Sinytra-FF6B6B?style=flat)<br>
   ![License](https://img.shields.io/badge/License-GPLv3/ARR-FF6B6B?style=flat)
 </p>
 
+<p align="center">
+  <img src="src/main/resources/assets/pearlanium_mod/Showcase.png" width="500">
+</p>
 
 Pearlanium Mod introduces two new material tiers that extend Minecraft's progression system in a way that feels natural to the vanilla experience. The mod adds Pearlanium (a superior Netherite variant) and Wardium (an advanced alloy tier), along with new tools, armor, blocks, and ore generation.
 
