@@ -66,7 +66,7 @@ public abstract class ArrowBounceMixin extends Entity {
         Entity owner = arrow.getOwner();
         
         // Only track arrows fired by players
-        if (!(owner instanceof PlayerEntity player)) return;
+        if (!(owner instanceof PlayerEntity)) return;
         
         Vec3d currentPos = this.getPos();
         
