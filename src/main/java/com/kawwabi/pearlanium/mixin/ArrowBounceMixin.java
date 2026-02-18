@@ -70,15 +70,21 @@ public abstract class ArrowBounceMixin extends Entity {
         
         Vec3d currentPos = this.getPos();
         
-        // If we haven't bounced off an Enderman yet, check for nearby Endermen
+        // If we haven't bounced off an Enderman yet, check for nearby Endermen (including modded Endermen)
         if (!this.bouncedOffEnderman) {
             double detectionRange = 2.0;
             Box searchBox = this.getBoundingBox().expand(detectionRange);
             
-            List<EndermanEntity> nearbyEndermen = this.getWorld().getEntitiesByType(
-                net.minecraft.entity.EntityType.ENDERMAN,
+            // Get all EndermanEntity instances (includes vanilla and modded Endermen)
+            // and filter by checking if their type ID ends with "enderman" or "_enderman" for mod compatibility
+            // This matches: "minecraft:enderman", "endermanoverhaul:enderman", "endermanoverhaul:frost_enderman", etc.
+            List<EndermanEntity> nearbyEndermen = this.getWorld().getEntitiesByClass(
+                EndermanEntity.class,
                 searchBox,
-                enderman -> true
+                enderman -> {
+                    String typeId = enderman.getType().toString();
+                    return typeId.endsWith("enderman") || typeId.endsWith("_enderman");
+                }
             );
             
             if (!nearbyEndermen.isEmpty()) {
