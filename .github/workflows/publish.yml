@@ -47,11 +47,17 @@ jobs:
             exit 0
           fi
           echo "jar_path=$JAR" >> $GITHUB_OUTPUT
+      - name: Prepare artifacts (exclude sources)
+        run: |
+          mkdir -p artifacts
+          find build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*-sources.jar' -exec cp {} artifacts/ \;
+          ls -la artifacts || true
+
       - name: Upload built jars
         uses: actions/upload-artifact@v4
         with:
           name: jars
-          path: build/libs/*.jar
+          path: artifacts/*.jar
 
   publish_fabric_quilt:
     name: Publish (Fabric + Quilt)
@@ -74,16 +80,17 @@ jobs:
         id: set_files
         run: |
           set -eu
-          FILES=$(ls build/libs/*.jar 2>/dev/null || true)
-          if [ -z "$FILES" ]; then
+          mapfile -t files < <(find build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*-sources.jar' -print)
+          if [ ${#files[@]} -eq 0 ]; then
             echo "files=" >> $GITHUB_OUTPUT
             exit 1
           fi
-          # produce newline separated list for the action
-          printf "%s\n" $FILES > files_list.txt
+          printf "%s\n" "${files[@]}" > files_list.txt
           echo "files<<EOF" >> $GITHUB_OUTPUT
           cat files_list.txt >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+          primary=$(basename "${files[0]}")
+          echo "primary=$primary" >> $GITHUB_OUTPUT
 
       - name: Publish to Modrinth (Fabric + Quilt)
         uses: cloudnode-pro/modrinth-publish@v2
@@ -98,6 +105,7 @@ jobs:
           game-versions: |-
             1.21.1
           files: ${{ steps.set_files.outputs.files }}
+          primary-file: ${{ steps.set_files.outputs.primary }}
           channel: release
           changelog: ${{ github.event.inputs.changelog }}
 
@@ -122,15 +130,17 @@ jobs:
         id: set_files_neoforge
         run: |
           set -eu
-          FILES=$(ls build/libs/*.jar 2>/dev/null || true)
-          if [ -z "$FILES" ]; then
+          mapfile -t files < <(find build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*-sources.jar' -print)
+          if [ ${#files[@]} -eq 0 ]; then
             echo "files=" >> $GITHUB_OUTPUT
             exit 1
           fi
-          printf "%s\n" $FILES > files_list.txt
+          printf "%s\n" "${files[@]}" > files_list.txt
           echo "files<<EOF" >> $GITHUB_OUTPUT
           cat files_list.txt >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+          primary=$(basename "${files[0]}")
+          echo "primary=$primary" >> $GITHUB_OUTPUT
 
       - name: Publish to Modrinth (NeoForge)
         uses: cloudnode-pro/modrinth-publish@v2
@@ -143,6 +153,7 @@ jobs:
           game-versions: |-
             1.21.1
           files: ${{ steps.set_files_neoforge.outputs.files }}
+          primary-file: ${{ steps.set_files_neoforge.outputs.primary }}
           channel: release
           changelog: ${{ github.event.inputs.changelog }}
           dependencies: |-
