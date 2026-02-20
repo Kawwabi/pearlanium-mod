@@ -1,0 +1,124 @@
+name: Publish to Modrinth
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g. 1.0.1)'
+        required: true
+        default: ''
+      target:
+        description: 'Which publish to run: both, fabric, neoforge'
+        required: true
+        default: 'both'
+      changelog:
+        description: 'Optional changelog / release notes (Markdown)'
+        required: false
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    outputs:
+      jar-path: ${{ steps.collect.outputs.jar_path }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Build (Gradle)
+        run: ./gradlew --no-daemon build -x test
+
+      - name: List built jars
+        run: ls -la build/libs || true
+
+      - name: Collect artifact path
+        id: collect
+        run: |
+          set -eu
+          JAR=$(ls build/libs/*.jar | head -n1 || true)
+          if [ -z "$JAR" ]; then
+            echo "jar_path=" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          echo "jar_path=$JAR" >> $GITHUB_OUTPUT
+      - name: Upload built jars
+        uses: actions/upload-artifact@v4
+        with:
+          name: jars
+          path: build/libs/*.jar
+
+  publish_fabric_quilt:
+    name: Publish (Fabric + Quilt)
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.target == 'both' || github.event.inputs.target == 'fabric' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download built jars
+        uses: actions/download-artifact@v4
+        with:
+          name: jars
+          path: build/libs
+
+      - name: List downloaded jars
+        run: ls -la build/libs || true
+
+      - name: Publish to Modrinth (Fabric + Quilt)
+        uses: cloudnode-pro/modrinth-publish@v2
+        with:
+          token: ${{ secrets.MODRINTH_TOKEN }}
+          project: jCVnXX4K
+          version: ${{ github.event.inputs.version }}
+          name: ${{ github.event.inputs.version }}
+          loaders: |-
+            fabric
+            quilt
+          game-versions: |-
+            1.21.1
+          files: build/libs/*.jar
+          channel: release
+          changelog: ${{ github.event.inputs.changelog }}
+
+  publish_neoforge:
+    name: Publish (NeoForge)
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.target == 'both' || github.event.inputs.target == 'neoforge' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download built jars
+        uses: actions/download-artifact@v4
+        with:
+          name: jars
+          path: build/libs
+
+      - name: List downloaded jars
+        run: ls -la build/libs || true
+
+      - name: Publish to Modrinth (NeoForge)
+        uses: cloudnode-pro/modrinth-publish@v2
+        with:
+          token: ${{ secrets.MODRINTH_TOKEN }}
+          project: jCVnXX4K
+          version: ${{ github.event.inputs.version }}
+          name: ${{ github.event.inputs.version }}
+          loaders: neoforge
+          game-versions: |-
+            1.21.1
+          files: build/libs/*.jar
+          channel: release
+          changelog: ${{ github.event.inputs.changelog }}
+          dependencies: |-
+            [
+              {"project_id": "u58R1TMW", "dependency_type": "required"}
+            ]
