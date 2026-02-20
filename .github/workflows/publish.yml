@@ -98,7 +98,7 @@ jobs:
           token: ${{ secrets.MODRINTH_TOKEN }}
           project: jCVnXX4K
           version: ${{ github.event.inputs.version }}
-          name: ${{ github.event.inputs.version }}
+          name: "Pearlanium Mod ${{ github.event.inputs.version }}"
           loaders: |-
             fabric
             quilt
@@ -106,6 +106,10 @@ jobs:
             1.21.1
           files: ${{ steps.set_files.outputs.files }}
           primary-file: ${{ steps.set_files.outputs.primary }}
+          dependencies: |-
+            [
+              {"project_id": "Aqlf1Shp", "dependency_type": "required"}
+            ]
           channel: release
           changelog: ${{ github.event.inputs.changelog }}
 
@@ -148,15 +152,17 @@ jobs:
           token: ${{ secrets.MODRINTH_TOKEN }}
           project: jCVnXX4K
           version: ${{ github.event.inputs.version }}
-          name: ${{ github.event.inputs.version }}
+          name: "Pearlanium Mod ${{ github.event.inputs.version }}"
           loaders: neoforge
           game-versions: |-
             1.21.1
           files: ${{ steps.set_files_neoforge.outputs.files }}
           primary-file: ${{ steps.set_files_neoforge.outputs.primary }}
-          channel: release
-          changelog: ${{ github.event.inputs.changelog }}
           dependencies: |-
             [
-              {"project_id": "u58R1TMW", "dependency_type": "required"}
+              {"project_id": "u58R1TMW", "dependency_type": "required"},
+              {"project_id": "Aqlf1Shp", "dependency_type": "required"}
             ]
+          channel: release
+          changelog: ${{ github.event.inputs.changelog }}
+          
