@@ -108,7 +108,7 @@ jobs:
           primary-file: ${{ steps.set_files.outputs.primary }}
           dependencies: |-
             [
-              {"project_id": "Aqlf1Shp", "dependency_type": "required"}
+              {"project_id": "P7dR8mSH", "dependency_type": "required"}
             ]
           channel: release
           changelog: ${{ github.event.inputs.changelog }}
