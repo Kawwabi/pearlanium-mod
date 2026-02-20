@@ -70,6 +70,20 @@ jobs:
 
       - name: List downloaded jars
         run: ls -la build/libs || true
+      - name: Set files input
+        id: set_files
+        run: |
+          set -eu
+          FILES=$(ls build/libs/*.jar 2>/dev/null || true)
+          if [ -z "$FILES" ]; then
+            echo "files=" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          # produce newline separated list for the action
+          printf "%s\n" $FILES > files_list.txt
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          cat files_list.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Publish to Modrinth (Fabric + Quilt)
         uses: cloudnode-pro/modrinth-publish@v2
@@ -83,7 +97,7 @@ jobs:
             quilt
           game-versions: |-
             1.21.1
-          files: build/libs/*.jar
+          files: ${{ steps.set_files.outputs.files }}
           channel: release
           changelog: ${{ github.event.inputs.changelog }}
 
@@ -104,6 +118,19 @@ jobs:
 
       - name: List downloaded jars
         run: ls -la build/libs || true
+      - name: Set files input
+        id: set_files_neoforge
+        run: |
+          set -eu
+          FILES=$(ls build/libs/*.jar 2>/dev/null || true)
+          if [ -z "$FILES" ]; then
+            echo "files=" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          printf "%s\n" $FILES > files_list.txt
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          cat files_list.txt >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Publish to Modrinth (NeoForge)
         uses: cloudnode-pro/modrinth-publish@v2
@@ -115,7 +142,7 @@ jobs:
           loaders: neoforge
           game-versions: |-
             1.21.1
-          files: build/libs/*.jar
+          files: ${{ steps.set_files_neoforge.outputs.files }}
           channel: release
           changelog: ${{ github.event.inputs.changelog }}
           dependencies: |-
