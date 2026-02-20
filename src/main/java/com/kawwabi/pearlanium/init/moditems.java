@@ -22,13 +22,14 @@ import java.util.List;
 
     public class moditems {
 
-    // Text components for the Pearlanium Upgrade Smithing Template tooltip
+    // text stuff for the pearlanium upgrade smithing template tooltip
     private static final Text PEARLANIUM_UPGRADE_TEXT = Text.translatable(Util.createTranslationKey("upgrade", PearlaniumMod.id("pearlanium_upgrade"))).formatted(Formatting.GRAY);
     private static final Text PEARLANIUM_UPGRADE_APPLIES_TO_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.applies_to"))).formatted(Formatting.BLUE);
     private static final Text PEARLANIUM_UPGRADE_INGREDIENTS_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.ingredients"))).formatted(Formatting.BLUE);
     private static final Text PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.base_slot_description")));
     private static final Text PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.pearlanium_upgrade.additions_slot_description")));
 
+    // empty slot textures for the template UI
     private static final Identifier EMPTY_SLOT_HELMET_TEXTURE = Identifier.of("item/empty_armor_slot_helmet");
     private static final Identifier EMPTY_SLOT_CHESTPLATE_TEXTURE = Identifier.of("item/empty_armor_slot_chestplate");
     private static final Identifier EMPTY_SLOT_LEGGINGS_TEXTURE = Identifier.of("item/empty_armor_slot_leggings");
@@ -40,6 +41,7 @@ import java.util.List;
     private static final Identifier EMPTY_SLOT_PICKAXE_TEXTURE = Identifier.of("item/empty_slot_pickaxe");
     private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = Identifier.of("item/empty_slot_ingot");
 
+    // which slots show up in the template
     private static final List<Identifier> PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES = List.of(
         EMPTY_SLOT_HELMET_TEXTURE,
         EMPTY_SLOT_SWORD_TEXTURE,
@@ -52,22 +54,22 @@ import java.util.List;
         EMPTY_SLOT_SHOVEL_TEXTURE
     );
     private static final List<Identifier> PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES = List.of(
-            EMPTY_SLOT_INGOT_TEXTURE // Represents the Pearlanium Ingot slot
+            EMPTY_SLOT_INGOT_TEXTURE // the slot where you put the ingot
     );
 
     public static final Item PEARLANIUM_UPGRADE_SMITHING_TEMPLATE = register( "pearlanium_upgrade_smithing_template",
         new SmithingTemplateItem(
-                PEARLANIUM_UPGRADE_APPLIES_TO_TEXT, // Text: "Applies to: ..."
-                PEARLANIUM_UPGRADE_INGREDIENTS_TEXT, // Text: "Ingredients: ..."
-                PEARLANIUM_UPGRADE_TEXT, // Text: "Pearlanium Upgrade" (title)
-                PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, // Text for base slot hover
-                PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT, // Text for additions slot hover
-                PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES, // Icons for empty base slots
-                PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // Icons for empty addition slots
+                PEARLANIUM_UPGRADE_APPLIES_TO_TEXT, // "applies to: ..."
+                PEARLANIUM_UPGRADE_INGREDIENTS_TEXT, // "ingredients: ..."
+                PEARLANIUM_UPGRADE_TEXT, // "pearlanium upgrade" (title)
+                PEARLANIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, // text when hovering base slot
+                PEARLANIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT, // text when hovering additions slot
+                PEARLANIUM_UPGRADE_BASE_SLOT_TEXTURES, // icons for empty base slots
+                PEARLANIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // icons for empty addition slots
         ));
 
 
-    // Wardium Upgrade Smithing Template
+    // same thing but for wardium
     private static final Text WARDIUM_UPGRADE_TEXT = Text.translatable(Util.createTranslationKey("upgrade", PearlaniumMod.id("wardium_upgrade"))).formatted(Formatting.GRAY);
     private static final Text WARDIUM_UPGRADE_APPLIES_TO_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.wardium_upgrade.applies_to"))).formatted(Formatting.BLUE);
     private static final Text WARDIUM_UPGRADE_INGREDIENTS_TEXT = Text.translatable(Util.createTranslationKey("item", PearlaniumMod.id("smithing_template.wardium_upgrade.ingredients"))).formatted(Formatting.BLUE);
@@ -97,18 +99,18 @@ import java.util.List;
             WARDIUM_EMPTY_SLOT_SHOVEL_TEXTURE
     );
     private static final List<Identifier> WARDIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES = List.of(
-            WARDIUM_EMPTY_SLOT_INGOT_TEXTURE // Represents the Pearlanium Ingot slot
+            WARDIUM_EMPTY_SLOT_INGOT_TEXTURE // where the ingot goes
     );
 
     public static final Item WARDIUM_UPGRADE_SMITHING_TEMPLATE = register( "wardium_upgrade_smithing_template",
             new SmithingTemplateItem(
-                    WARDIUM_UPGRADE_APPLIES_TO_TEXT, // Text: "Applies to: ..."
-                    WARDIUM_UPGRADE_INGREDIENTS_TEXT, // Text: "Ingredients: ..."
-                    WARDIUM_UPGRADE_TEXT, // Text: "Wardium Upgrade" (title)
-                    WARDIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, // Text for base slot hover
-                    WARDIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT, // Text for additions slot hover
-                    WARDIUM_UPGRADE_BASE_SLOT_TEXTURES, // Icons for empty base slots
-                    WARDIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // Icons for empty addition slots
+                    WARDIUM_UPGRADE_APPLIES_TO_TEXT, // "applies to: ..."
+                    WARDIUM_UPGRADE_INGREDIENTS_TEXT, // "ingredients: ..."
+                    WARDIUM_UPGRADE_TEXT, // "wardium upgrade" (title)
+                    WARDIUM_UPGRADE_BASE_SLOT_DESCRIPTION_TEXT, // text when hovering base slot
+                    WARDIUM_UPGRADE_ADDITIONS_SLOT_DESCRIPTION_TEXT, // text when hovering additions slot
+                    WARDIUM_UPGRADE_BASE_SLOT_TEXTURES, // icons for empty base slots
+                    WARDIUM_UPGRADE_ADDITIONAL_SLOT_TEXTURES // icons for empty addition slots
             ));
 
     // Items

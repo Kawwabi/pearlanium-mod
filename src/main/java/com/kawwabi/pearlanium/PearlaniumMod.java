@@ -27,17 +27,12 @@ import com.kawwabi.pearlanium.init.worldgen.BiomeModificationInit;
 public class PearlaniumMod implements ModInitializer {
 	public static final String MOD_ID = "pearlanium_mod";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+	// this little guy logs stuff so we can debug when things go boom 💥
+	// we use the mod id as the name so it's clear who's talking (or screaming)
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
 		// load init classes
 		moditems.load();
 		modblocks.load();
@@ -48,9 +43,9 @@ public class PearlaniumMod implements ModInitializer {
 		// load loot table modifiers
 		PearlaniumModLootTableModifiers.addLootTableModifiers();
 
-		// event handling
+		// event handling - listening for stuff to happen
 
-		// ores
+		// ores - shiny rocks go here
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
 			entries.addAfter(Items.ANCIENT_DEBRIS, modblocks.PEARLED_ORE);
 		});
@@ -100,8 +95,7 @@ public class PearlaniumMod implements ModInitializer {
 			entries.addAfter(moditems.PEARLANIUM_AXE, moditems.PEARLANIUM_HOE);
 		});
 
-		// Add Wardium tools after Pearlanium tools
-		// In COMBAT group
+		// put wardium tools after pearlanium tools so they don't get lonely
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
 			entries.addAfter(moditems.PEARLANIUM_SWORD, moditems.WARDIUM_SWORD);
 		});
@@ -109,7 +103,7 @@ public class PearlaniumMod implements ModInitializer {
 			entries.addAfter(moditems.PEARLANIUM_AXE, moditems.WARDIUM_AXE);
 		});
 
-		// In TOOLS group
+		// tools group for all your digging needs
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
 			entries.addAfter(moditems.PEARLANIUM_HOE, moditems.WARDIUM_SHOVEL);
 		});
@@ -137,7 +131,7 @@ public class PearlaniumMod implements ModInitializer {
 			entries.addAfter(moditems.PEARLANIUM_LEGGINGS, moditems.PEARLANIUM_BOOTS);
 		});
 
-		// Add Wardium armor after Pearlanium armor
+		// put wardium armor after pearlanium armor
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(entries -> {
 			entries.addAfter(moditems.PEARLANIUM_BOOTS, moditems.WARDIUM_HELMET);
 		});
@@ -175,7 +169,7 @@ public class PearlaniumMod implements ModInitializer {
         }
     });
 
-		//test message
+		// nothin exploded yet 🎉
 		LOGGER.info("Mod loaded!");
 	}
 

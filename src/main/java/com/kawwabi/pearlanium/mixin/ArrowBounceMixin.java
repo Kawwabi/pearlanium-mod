@@ -1,11 +1,15 @@
 package com.kawwabi.pearlanium.mixin;
 
+import com.kawwabi.pearlanium.init.moditems;
+import com.kawwabi.pearlanium.util.TeleportCancelTracker;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.EndermanEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
@@ -17,10 +21,17 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
- * Mixin to detect when an arrow bounces off an Enderman and hits the original shooter.
- * This triggers the "Yes today, I'm sorry." achievement.
+ * this mixin watches arrows
+ * when an arrow bounces off an enderman and hits the dumdum who shot it,
+ * we give them the "yes today, i'm sorry" achievement
+ * 
+ * what needs to happen:
+ * 1. player is wearing full pearlanium or wardium armor
+ * 2. an enderman tried to teleport but got blocked
+ * 3. an arrow bounced back and smacked the player within 3 seconds
  */
 @Mixin(ArrowEntity.class)
 public abstract class ArrowBounceMixin extends Entity {
@@ -35,28 +46,39 @@ public abstract class ArrowBounceMixin extends Entity {
     }
 
     /**
-     * Hook into the arrow's onHit method to detect when it hits the player.
-     * If it hits the original owner AND has bounced off an Enderman, trigger achievement.
+     * called when the arrow hits something - we check if it hit our own shooter lol
      */
     @Inject(at = @At("TAIL"), method = "onHit(Lnet/minecraft/entity/LivingEntity;)V")
     public void onHit(LivingEntity hitEntity, CallbackInfo callbackInfo) {
         if (this.getWorld().isClient) return;
         
-        // Check if the arrow hit its original owner (the player who shot it)
+        // did we just hit the person who shot us? :O
         ArrowEntity arrow = (ArrowEntity) (Object) this;
         Entity owner = arrow.getOwner();
         
         if (owner instanceof PlayerEntity player && hitEntity == player) {
-            // Only trigger if the arrow has bounced off an Enderman
+            // did we bounce off an enderman?
             if (this.bouncedOffEnderman) {
-                triggerYesTodayImSorryAchievement(player);
+                // is the player wearing the fancy armor?
+                if (isWearingFullPearlaniumOrWardiumArmor(player)) {
+                    // was a teleport blocked recently? (within 3 seconds)
+                    UUID playerUuid = player.getUuid();
+                    if (TeleportCancelTracker.hasRecentTeleportCancel(playerUuid)) {
+                        // okaay, everything lined up! here's your achievement 🎉
+                        triggerYesTodayImSorryAchievement(player);
+                        
+                        // clean up so we don't give this again
+                        TeleportCancelTracker.clearTeleportCancel(playerUuid);
+                    }
+                }
+                // reset for next time
                 this.bouncedOffEnderman = false;
             }
         }
     }
 
     /**
-     * Hook into the arrow's tick method to detect bouncing and check if it damages the original shooter.
+     * called every tick - we watch the arrow to see if it bounces off an enderman
      */
     @Inject(at = @At("TAIL"), method = "tick()V")
     public void tick(CallbackInfo callbackInfo) {
@@ -65,19 +87,17 @@ public abstract class ArrowBounceMixin extends Entity {
         ArrowEntity arrow = (ArrowEntity) (Object) this;
         Entity owner = arrow.getOwner();
         
-        // Only track arrows fired by players
+        // only care about arrows players shot
         if (!(owner instanceof PlayerEntity)) return;
         
         Vec3d currentPos = this.getPos();
         
-        // If we haven't bounced off an Enderman yet, check for nearby Endermen (including modded Endermen)
+        // looking for nearby endermen to bounce off of
         if (!this.bouncedOffEnderman) {
             double detectionRange = 2.0;
             Box searchBox = this.getBoundingBox().expand(detectionRange);
             
-            // Get all EndermanEntity instances (includes vanilla and modded Endermen)
-            // and filter by checking if their type ID ends with "enderman" or "_enderman" for mod compatibility
-            // This matches: "minecraft:enderman", "endermanoverhaul:enderman", "endermanoverhaul:frost_enderman", etc.
+            // finding endermen (including modded ones!)
             List<EndermanEntity> nearbyEndermen = this.getWorld().getEntitiesByClass(
                 EndermanEntity.class,
                 searchBox,
@@ -92,7 +112,7 @@ public abstract class ArrowBounceMixin extends Entity {
                     Vec3d toOwner = owner.getPos().subtract(currentPos).normalize();
                     Vec3d velocity = this.getVelocity();
                     
-                    // If velocity is pointing toward the owner, it bounced back
+                    // is it flying back toward the shooter?
                     if (velocity.length() > 0.1 && velocity.normalize().dotProduct(toOwner) > 0.5) {
                         this.bouncedOffEnderman = true;
                     }
@@ -100,12 +120,82 @@ public abstract class ArrowBounceMixin extends Entity {
             }
         }
         
-        // Update previous position for next frame
+        // remember where we were for next frame
         this.previousPosition = currentPos;
     }
 
     /**
-     * Trigger the "Yes today, I'm sorry." achievement for the player.
+     * is the player wearing enough fancy armor? (4+ pieces)
+     */
+    @Unique
+    private boolean isWearingFullPearlaniumOrWardiumArmor(PlayerEntity player) {
+        return isWearingFullPearlaniumArmorSet(player) || isWearingFullWardiumArmorSet(player) || isWearingFullMixedArmorSet(player);
+    }
+
+    /**
+     * checking if player has full pearlanium set
+     */
+    @Unique
+    private boolean isWearingFullPearlaniumArmorSet(PlayerEntity player) {
+        ItemStack headItemStack = player.getEquippedStack(EquipmentSlot.HEAD);
+        ItemStack chestItemStack = player.getEquippedStack(EquipmentSlot.CHEST);
+        ItemStack legsItemStack = player.getEquippedStack(EquipmentSlot.LEGS);
+        ItemStack feetItemStack = player.getEquippedStack(EquipmentSlot.FEET);
+
+        return headItemStack.isOf(moditems.PEARLANIUM_HELMET)
+                && chestItemStack.isOf(moditems.PEARLANIUM_CHESTPLATE)
+                && legsItemStack.isOf(moditems.PEARLANIUM_LEGGINGS)
+                && feetItemStack.isOf(moditems.PEARLANIUM_BOOTS);
+    }
+
+    /**
+     * checking if player has full wardium set
+     */
+    @Unique
+    private boolean isWearingFullWardiumArmorSet(PlayerEntity player) {
+        ItemStack headItemStack = player.getEquippedStack(EquipmentSlot.HEAD);
+        ItemStack chestItemStack = player.getEquippedStack(EquipmentSlot.CHEST);
+        ItemStack legsItemStack = player.getEquippedStack(EquipmentSlot.LEGS);
+        ItemStack feetItemStack = player.getEquippedStack(EquipmentSlot.FEET);
+
+        return headItemStack.isOf(moditems.WARDIUM_HELMET)
+                && chestItemStack.isOf(moditems.WARDIUM_CHESTPLATE)
+                && legsItemStack.isOf(moditems.WARDIUM_LEGGINGS)
+                && feetItemStack.isOf(moditems.WARDIUM_BOOTS);
+    }
+
+    /**
+     * mixed armor? we don't judge! as long as it's 4+ pieces from either set
+     * like: pearlanium boots + wardium chestplate + wardium leggings + wardium helmet = works!
+     */
+    @Unique
+    private boolean isWearingFullMixedArmorSet(PlayerEntity player) {
+        int pearlaniumCount = 0;
+        int wardiumCount = 0;
+        
+        ItemStack headItemStack = player.getEquippedStack(EquipmentSlot.HEAD);
+        ItemStack chestItemStack = player.getEquippedStack(EquipmentSlot.CHEST);
+        ItemStack legsItemStack = player.getEquippedStack(EquipmentSlot.LEGS);
+        ItemStack feetItemStack = player.getEquippedStack(EquipmentSlot.FEET);
+        
+        // count dem pearlanium pieces
+        if (headItemStack.isOf(moditems.PEARLANIUM_HELMET)) pearlaniumCount++;
+        if (chestItemStack.isOf(moditems.PEARLANIUM_CHESTPLATE)) pearlaniumCount++;
+        if (legsItemStack.isOf(moditems.PEARLANIUM_LEGGINGS)) pearlaniumCount++;
+        if (feetItemStack.isOf(moditems.PEARLANIUM_BOOTS)) pearlaniumCount++;
+        
+        // count dem wardium pieces
+        if (headItemStack.isOf(moditems.WARDIUM_HELMET)) wardiumCount++;
+        if (chestItemStack.isOf(moditems.WARDIUM_CHESTPLATE)) wardiumCount++;
+        if (legsItemStack.isOf(moditems.WARDIUM_LEGGINGS)) wardiumCount++;
+        if (feetItemStack.isOf(moditems.WARDIUM_BOOTS)) wardiumCount++;
+        
+        // need at least 4 pieces total
+        return (pearlaniumCount + wardiumCount) >= 4;
+    }
+
+    /**
+     * give the player the achievement! 🏆
      */
     @Unique
     private void triggerYesTodayImSorryAchievement(PlayerEntity player) {

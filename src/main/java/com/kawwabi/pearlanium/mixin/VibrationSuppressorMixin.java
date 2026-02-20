@@ -16,23 +16,22 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Mixin to suppress game events (vibrations) when the source entity is a player wearing full Wardium armor.
- * This prevents sculk sensors from detecting sounds/vibrations caused by the player.
+ * this mixin makes wardium armor silent to sculk sensors
+ * it stops sculk sensors from detecting the player when they're wearing full wardium
  * 
- * Key insight: We allow the player's movement events (step, sneak) to pass through so the
- * "avoid_vibration" advancement can trigger. The WardiumArmorMixin's isSilent() check makes
- * these events register as "silent" to nearby sensors.
+ * we let movement events (step, sneak) still go through
+ * so the "avoid_vibration" achievement can trigger, but the sensor doesn't "hear" them
  * 
- * Suppression logic:
- * 1. Only suppress when the SOURCE entity is a player wearing full Wardium armor
- * 2. Movement events (step, sneak) → ALLOW (for advancement)
- * 3. Other events → SUPPRESS
+ * how it works:
+ * 1. only applies when player is wearing full wardium armor
+ * 2. movement stuff (step, sneak) → let through (for achievement)
+ * 3. everything else → SILENCE >:D
  */
 @Mixin(ServerWorld.class)
 public abstract class VibrationSuppressorMixin {
 
     /**
-     * Movement-related game events that should pass through (for advancement)
+     * movement events we want to let through for the achievement
      */
     @Unique
     private static final java.util.Set<String> MOVEMENT_EVENTS = java.util.Set.of(
@@ -41,8 +40,7 @@ public abstract class VibrationSuppressorMixin {
     );
 
     /**
-     * Hook into the emitGameEvent method.
-     * This is where game events are emitted and vibrations are created.
+     * this is where game events get emitted, we intercept them here!
      */
     @Inject(at = @At("HEAD"), method = "emitGameEvent(Lnet/minecraft/registry/entry/RegistryEntry;Lnet/minecraft/util/math/Vec3d;Lnet/minecraft/world/event/GameEvent$Emitter;)V", cancellable = true)
     private void onEmitGameEvent(RegistryEntry<GameEvent> event, Vec3d emitterPos, GameEvent.Emitter emitter, CallbackInfo callbackInfo) {
@@ -52,14 +50,13 @@ public abstract class VibrationSuppressorMixin {
     }
 
     /**
-     * Check if the game event should be suppressed.
-     * Only suppress when the source entity is a player wearing full Wardium armor.
+     * should we silence this event?
+     * only if it's a player wearing full wardium armor
      */
     @Unique
     @SuppressWarnings("resource") // ServerWorld is not closeable - false positive from Java language server
     private boolean shouldSuppressVibration(RegistryEntry<GameEvent> event, Vec3d emitterPos, GameEvent.Emitter emitter) {
-        // Only suppress if the world is fully loaded and ready
-        // Check that the world has started (time > 0 indicates initial loading is complete)
+        // wait until world is ready
         ServerWorld thisWorld = (ServerWorld)(Object)this;
         if (thisWorld.getTime() <= 0) {
             return false;
@@ -67,29 +64,28 @@ public abstract class VibrationSuppressorMixin {
         
         Entity sourceEntity = emitter.sourceEntity();
         
-        // Only suppress when the SOURCE entity is an armored player
+        // only care about players in wardium armor
         if (sourceEntity instanceof PlayerEntity sourcePlayer) {
             if (isWearingFullWardiumArmorSet(sourcePlayer)) {
-                // Allow movement events (step, sneak) to pass through for advancement
-                // The isSilent() check in WardiumArmorMixin makes these "silent"
+                // let movement events through for achievement stuff
                 if (isMovementEvent(event)) {
-                    return false; // Don't suppress - let it through
+                    return false; // don't silence - let it happen
                 }
-                // Suppress all other events when player is wearing full Wardium
+                // everything else? SILENCE IT
                 return true;
             }
         }
         
-        // Don't suppress anything else - no radius-based suppression
+        // not our problem otherwise
         return false;
     }
 
     /**
-     * Check if the event is a movement-related event
+     * is this a movement-related event?
      */
     @Unique
     private boolean isMovementEvent(RegistryEntry<GameEvent> event) {
-        // Get event name from registry entry - use toString() for simple name
+        // get event name and check if it's movement-y
         String eventName = event.toString();
         for (String movement : MOVEMENT_EVENTS) {
             if (eventName.contains(movement)) {
@@ -100,7 +96,7 @@ public abstract class VibrationSuppressorMixin {
     }
 
     /**
-     * Check if a player is wearing the full Wardium armor set.
+     * check if player has full wardium set
      */
     @Unique
     private boolean isWearingFullWardiumArmorSet(PlayerEntity player) {

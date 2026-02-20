@@ -13,20 +13,20 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import com.kawwabi.pearlanium.util.TeleportCancelTracker;
+
 /**
- * Mixin to prevent Endermen from teleporting close to players wearing full Pearlanium or Wardium armor.
- * When the player is wearing a complete armor set from either set, Endermen cannot teleport to them.
+ * this mixin stops endermen from teleporting when you're wearing fancy armor
  */
 @Mixin(EndermanEntity.class)
 public abstract class EndermanTeleportMixin {
 
     /**
-     * Hook into the Enderman's teleport method to prevent teleportation 
-     * to players wearing full Pearlanium or Wardium armor.
+     * we intercept the teleport method - no escaping via portal-y stuff
      */
     @Inject(at = @At("HEAD"), method = "teleportTo(DDD)Z", cancellable = true)
     public void onTeleportTo(double x, double y, double z, CallbackInfoReturnable<Boolean> callbackInfo) {
-        // Check if there are any players nearby wearing full armor that should block teleportation
+        // check if there's a player nearby with fancy armor
         if (shouldPreventTeleportation((EndermanEntity) (Object) this, x, y, z)) {
             playBlockedSound((EndermanEntity) (Object) this);
             callbackInfo.setReturnValue(false);
@@ -35,13 +35,12 @@ public abstract class EndermanTeleportMixin {
     }
 
     /**
-     * Hook into the teleportRandomly method - used when Enderman is attacked/damaged.
-     * This prevents the "teleport away when hit" behavior.
+     * this stops them from teleporting away when you hit them
+     * no running away! >:(
      */
     @Inject(at = @At("HEAD"), method = "teleportRandomly()Z", cancellable = true)
     public void onTeleportRandomly(CallbackInfoReturnable<Boolean> callbackInfo) {
-        // Check if there are any players nearby wearing full armor that should block teleportation
-        // Get the Enderman's current position as the target
+        // check if someone's wearing the armor that blocks this
         EndermanEntity enderman = (EndermanEntity) (Object) this;
         if (shouldPreventRandomTeleportation(enderman)) {
             playBlockedSound(enderman);
@@ -51,7 +50,7 @@ public abstract class EndermanTeleportMixin {
     }
 
     /**
-     * Play a sound when teleport is blocked
+     * play a little "nope" sound when they can't teleport
      */
     @Unique
     private void playBlockedSound(EndermanEntity enderman) {
@@ -68,23 +67,25 @@ public abstract class EndermanTeleportMixin {
     }
 
     /**
-     * Check if random teleportation should be prevented based on nearby players' armor
+     * checking if they tried to teleport away randomly (when hit)
      */
     @Unique
     private boolean shouldPreventRandomTeleportation(EndermanEntity enderman) {
         var world = enderman.getWorld();
         
-        // Get the Enderman's current position
+        // enderman's current spot
         net.minecraft.util.math.Vec3d endermanPos = enderman.getPos();
         
-        // Check all players in the world
+        // check all players in the world
         for (PlayerEntity player : world.getPlayers()) {
-            // Check if player is within 16 blocks (normal enderman teleport range)
+            // are they close enough? (16 blocks is normal enderman range)
             double distanceToEnderman = player.getPos().distanceTo(endermanPos);
             
             if (distanceToEnderman <= 16.0) {
-                // Check if player is wearing full Pearlanium or Wardium armor
-                if (isWearingFullPearlaniumArmorSet(player) || isWearingFullWardiumArmorSet(player)) {
+                // fancy armor check
+                if (isWearingFullPearlaniumArmorSet(player) || isWearingFullWardiumArmorSet(player) || isWearingFullMixedArmorSet(player)) {
+                    // remember this for the achievement later
+                    TeleportCancelTracker.recordTeleportCancel(player.getUuid());
                     triggerEnderShadowAdvancement(player);
                     return true;
                 }
@@ -95,22 +96,22 @@ public abstract class EndermanTeleportMixin {
     }
 
     /**
-     * Check if teleportation should be prevented based on nearby players' armor
+     * checking if they tried to teleport to a specific spot
      */
     @Unique
     private boolean shouldPreventTeleportation(EndermanEntity enderman, double x, double y, double z) {
-        // Get the enderman's world
+        // enderman's world
         var world = enderman.getWorld();
         
-        // Check all players in the world
+        // check all players
         for (PlayerEntity player : world.getPlayers()) {
-            // Check if player is within a reasonable distance of the teleport destination
+            // is player near where the enderman wants to go?
             double distanceToTarget = player.getPos().distanceTo(new net.minecraft.util.math.Vec3d(x, y, z));
             
-            // If player is within 8 blocks of where the enderman wants to teleport
+            // if player is within 8 blocks
             if (distanceToTarget <= 8.0) {
-                // Check if player is wearing full Pearlanium or Wardium armor
-                if (isWearingFullPearlaniumArmorSet(player) || isWearingFullWardiumArmorSet(player)) {
+                // do they have fancy armor?
+                if (isWearingFullPearlaniumArmorSet(player) || isWearingFullWardiumArmorSet(player) || isWearingFullMixedArmorSet(player)) {
                     triggerEnderShadowAdvancement(player);
                     return true;
                 }
@@ -121,7 +122,7 @@ public abstract class EndermanTeleportMixin {
     }
 
     /**
-     * Trigger the ender_shadow advancement for a player
+     * give the "no you won't" achievement
      */
     @Unique
     private void triggerEnderShadowAdvancement(PlayerEntity player) {
@@ -139,7 +140,7 @@ public abstract class EndermanTeleportMixin {
     }
 
     /**
-     * Check if a player is wearing the full Pearlanium armor set
+     * checking for full pearlanium set
      */
     @Unique
     private boolean isWearingFullPearlaniumArmorSet(PlayerEntity player) {
@@ -155,7 +156,7 @@ public abstract class EndermanTeleportMixin {
     }
 
     /**
-     * Check if a player is wearing the full Wardium armor set
+     * checking for full wardium set
      */
     @Unique
     private boolean isWearingFullWardiumArmorSet(PlayerEntity player) {
@@ -168,5 +169,35 @@ public abstract class EndermanTeleportMixin {
                 && chestItemStack.isOf(moditems.WARDIUM_CHESTPLATE)
                 && legsItemStack.isOf(moditems.WARDIUM_LEGGINGS)
                 && feetItemStack.isOf(moditems.WARDIUM_BOOTS);
+    }
+
+    /**
+     * mixed armor works too - just need 4+ pieces total
+     * like: pearlanium boots + wardium chestplate + wardium leggings + wardium helmet = blocked!
+     */
+    @Unique
+    private boolean isWearingFullMixedArmorSet(PlayerEntity player) {
+        int pearlaniumCount = 0;
+        int wardiumCount = 0;
+        
+        ItemStack headItemStack = player.getEquippedStack(EquipmentSlot.HEAD);
+        ItemStack chestItemStack = player.getEquippedStack(EquipmentSlot.CHEST);
+        ItemStack legsItemStack = player.getEquippedStack(EquipmentSlot.LEGS);
+        ItemStack feetItemStack = player.getEquippedStack(EquipmentSlot.FEET);
+        
+        // count dem pearlanium pieces
+        if (headItemStack.isOf(moditems.PEARLANIUM_HELMET)) pearlaniumCount++;
+        if (chestItemStack.isOf(moditems.PEARLANIUM_CHESTPLATE)) pearlaniumCount++;
+        if (legsItemStack.isOf(moditems.PEARLANIUM_LEGGINGS)) pearlaniumCount++;
+        if (feetItemStack.isOf(moditems.PEARLANIUM_BOOTS)) pearlaniumCount++;
+        
+        // count dem wardium pieces
+        if (headItemStack.isOf(moditems.WARDIUM_HELMET)) wardiumCount++;
+        if (chestItemStack.isOf(moditems.WARDIUM_CHESTPLATE)) wardiumCount++;
+        if (legsItemStack.isOf(moditems.WARDIUM_LEGGINGS)) wardiumCount++;
+        if (feetItemStack.isOf(moditems.WARDIUM_BOOTS)) wardiumCount++;
+        
+        // need at least 4 pieces
+        return (pearlaniumCount + wardiumCount) >= 4;
     }
 }
