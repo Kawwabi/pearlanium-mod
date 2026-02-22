@@ -46,7 +46,7 @@ public class PearlaniumModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.EMERALD), conditionsFromItem(Items.EMERALD))
                 .offerTo(exporter, getRecipeName(moditems.PEARLANIUM_INGOT) + "_from_brute_and_emerald");
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE, 2)
                 .input('E', Items.EMERALD)
                 .input('P', moditems.PEARLANIUM_UPGRADE_SMITHING_TEMPLATE)
                 .input('N', Items.END_STONE)
